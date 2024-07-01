@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="93ab5eea-2d9d-43eb-b56c-5c2c1d8d8b9c" name="Changes" comment="Got debug, basic controls, some logic working. Fan temperature control doesnt go on. Code is easy to read">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaFXApplication" />
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="implementing-fan-block-controls" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;wessmaker&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:wessmaker/fanwi-pc-software.git",
+    "accountId": "b7370e92-a918-4ac1-882f-50fa314d9225"
+  }
+}]]></component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2i9ZaumjNDrWLnQt7kkdTRoYGMB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+    <option name="sortByType" value="true" />
+    <option name="sortKey" value="BY_TYPE" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.FanwiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;info-panel-info-blocks&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/wessmaker/Documents/embedded_projects/fanwi_project/fanwi-pc-software&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;CSS&quot;,
+      &quot;PLAIN_TEXT&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/reference" />
+      <recent name="$PROJECT_DIR$/src/main/resources/fi/wessmaker/fanwipcsoftware" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/fi/wessmaker/fanwipcsoftware/images" />
+      <recent name="$PROJECT_DIR$/src/main/resources/fi/wessmaker/fanwipcsoftware/fxml" />
+      <recent name="$PROJECT_DIR$/src/main/resources/fi/wessmaker/fanwipcsoftware/stylesheet" />
+      <recent name="$PROJECT_DIR$/src/main/resources/fi/wessmaker/fanwipcsoftware" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="FanwiApplication" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="fi.wessmaker.fanwipcsoftware.FanwiApplication" />
+      <module name="fanwi-pc-software" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="93ab5eea-2d9d-43eb-b56c-5c2c1d8d8b9c" name="Changes" comment="" />
+      <created>1718904822375</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718904822375</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Fixed everything so I guess this can be called initial commit">
+      <option name="closed" value="true" />
+      <created>1718906952554</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718906952554</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added the licence and README.md">
+      <option name="closed" value="true" />
+      <created>1718907062645</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718907062645</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Little fix to FanGridPaneController">
+      <option name="closed" value="true" />
+      <created>1718909113830</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718909113830</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Got debug, basic controls, some logic working. Fan temperature control doesnt go on. Code is easy to read">
+      <option name="closed" value="true" />
+      <created>1718923697946</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718923697946</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Fixed everything so I guess this can be called initial commit" />
+    <MESSAGE value="Added the licence and README.md" />
+    <MESSAGE value="Little fix to FanGridPaneController" />
+    <MESSAGE value="Got debug, basic controls, some logic working. Fan temperature control doesnt go on. Code is easy to read" />
+    <option name="LAST_COMMIT_MESSAGE" value="Got debug, basic controls, some logic working. Fan temperature control doesnt go on. Code is easy to read" />
+  </component>
+</project>
