@@ -1,0 +1,27 @@
+name: Embedded CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+    paths:
+      - 'embedded/**'  # Trigger only on changes within c_project directory
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'embedded/**'  # Trigger only on changes within c_project directory
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build C project
+        run: |
+          cd c_project
+          make

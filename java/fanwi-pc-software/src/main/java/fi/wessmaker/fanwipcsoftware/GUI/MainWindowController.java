@@ -1,4 +1,4 @@
-package fi.wessmaker.fanwipcsoftware;
+package fi.wessmaker.fanwipcsoftware.GUI;
 
 import fi.wessmaker.fanwipcsoftware.GUI.infopanel.InfoInstance;
 import fi.wessmaker.fanwipcsoftware.communication.debug.Debug;
@@ -13,7 +13,6 @@ import javafx.scene.layout.VBox;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import fi.wessmaker.fanwipcsoftware.GUI.FanGridPaneController;
 
 public class MainWindowController implements  Initializable{
     
