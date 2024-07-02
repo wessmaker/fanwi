@@ -12,3 +12,4 @@ add a line:
 requires transitive javafx.graphics;
 ```
 to [module-info.java](module-info.java)
+tat

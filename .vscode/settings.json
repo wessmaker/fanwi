@@ -1,0 +1,7 @@
+{
+    "java.format.settings.url": "eclipse-formatter.xml",
+    "[java]": {
+        "editor.insertSpaces": false,
+        "editor.tabSize": 3
+    }
+}
