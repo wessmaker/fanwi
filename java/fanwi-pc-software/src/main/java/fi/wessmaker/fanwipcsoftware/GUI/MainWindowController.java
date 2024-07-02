@@ -40,15 +40,7 @@ public class MainWindowController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Debug.setDebug(debugButton.isSelected());
-        fanGridPaneController = new FanGridPaneController();
-        fan1ContentGridPane.getChildren().add(fanGridPaneController.getFanGridPane());
         debugButton.setSelected(true);
-        InfoInstance infoInstance = new InfoInstance("hello", "Hello");
-        GridPane gridPane = infoInstance.getInstance();
-        infoVBox.getChildren().add(gridPane);
-        InfoInstance infoInstance2 = new InfoInstance("test2", "testingvalue");
-        GridPane gridPane2 = infoInstance2.getInstance();
-        infoVBox.getChildren().add(gridPane2);
     }
 
 
