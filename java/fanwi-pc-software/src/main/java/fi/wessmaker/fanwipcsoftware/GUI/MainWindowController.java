@@ -2,6 +2,7 @@ package fi.wessmaker.fanwipcsoftware.GUI;
 
 import fi.wessmaker.fanwipcsoftware.GUI.infopanel.InfoInstance;
 import fi.wessmaker.fanwipcsoftware.communication.debug.Debug;
+import fi.wessmaker.fanwipcsoftware.hardware.Fan;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.MenuBar;
@@ -14,6 +15,7 @@ import javafx.scene.layout.VBox;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 public class MainWindowController implements Initializable {
 
     @FXML
@@ -24,7 +26,7 @@ public class MainWindowController implements Initializable {
 
     @FXML
     private MenuBar menuBar;
-
+    
     @FXML
     private GridPane fan1ContentGridPane;
 
@@ -34,13 +36,31 @@ public class MainWindowController implements Initializable {
     @FXML
     private ToggleButton debugButton;
 
-    FanGridPaneController fanGridPaneController;
+    private FanGridPaneController fanGridPaneController;
+    private int instanceCount = 3;
 
-
+    InfoInstance[] infoInstances;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Debug.setDebug(debugButton.isSelected());
+        fanGridPaneController = new FanGridPaneController();
+        fan1ContentGridPane.getChildren().add(fanGridPaneController.getFanGridPane());
         debugButton.setSelected(true);
+
+        infoInstances = new InfoInstance[instanceCount];
+
+
+        //TODO THESE DONT SHOW UP CORRECTLY IN GUI
+        infoInstances[0] = new InfoInstance("Temperature", String.valueOf(Fan.getInstance().getTemeprature()));
+        infoInstances[1] = new InfoInstance("Speed", String.valueOf(Fan.getInstance().getRealSpeed()));
+        infoInstances[2] = new InfoInstance("offset", String.valueOf(Fan.getInstance().getOffset()));
+        
+        for(int i = 0; i < instanceCount; i++){
+            infoVBox.getChildren().add(infoInstances[i].getInstance());
+        }
+
+        
+
     }
 
 

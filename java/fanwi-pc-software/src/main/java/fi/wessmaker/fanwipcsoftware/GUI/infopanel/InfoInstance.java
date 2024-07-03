@@ -2,6 +2,7 @@ package fi.wessmaker.fanwipcsoftware.GUI.infopanel;
 
 import fi.wessmaker.fanwipcsoftware.FanwiApplication;
 import fi.wessmaker.fanwipcsoftware.communication.debug.Debug;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -10,9 +11,18 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class InfoInstance {
-	private int height, width;
+
+	@FXML
+	private GridPane infoInstancePane;
+
+	@FXML
 	private Label textLabel;
+
+	@FXML
 	private Label valueLabel;
+
+
+	private int height, width;
 	private boolean booleanValue;
 	
 	/**
@@ -22,9 +32,13 @@ public class InfoInstance {
 		this.booleanValue = false;
  		textLabel = new Label(labelText);
 		valueLabel = new Label(labelValue);
+
 		textLabel.setMaxSize(width,height);
 		textLabel.setMinSize(width, height);
 		textLabel.setMinSize(width, height);
+		
+		setText(labelText);
+		setValue(labelValue);
 	}
 	
 	
