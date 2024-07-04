@@ -1,7 +1,7 @@
 package fi.wessmaker.fanwipcsoftware.communication.debug;
 
 public class Debug {
-	private static boolean debug = false;
+	private static boolean debugging = true;
 	
 	static char[] dividerList = {'*', '/', '-', '+'};
 	static int dividerId = 0;
@@ -17,7 +17,7 @@ public class Debug {
 	
 	
 	public static void print(String customText){
-		if (debug){
+		if (debugging){
 			System.out.println();
 			printDivider();
 			System.out.println("DEBUG:");
@@ -27,7 +27,7 @@ public class Debug {
 	}
 	
 	public static void print(Object value, String customText){
-		if (debug){
+		if (debugging){
 			System.out.println();
 			printDivider();
 			System.out.println();
@@ -40,8 +40,12 @@ public class Debug {
 		}
 	}
 	
-	public static void setDebug(boolean debugging){
-		debug = debugging;
+	public static void setDebugging(boolean bool){
+		debugging = bool;
 		System.out.println("Debugging: " + debugging);
+	}
+
+	public static boolean isDebugging(){
+		return debugging;
 	}
 }

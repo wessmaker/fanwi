@@ -74,7 +74,6 @@ public class FanGridPaneController implements Initializable {
 	}
 
 
-
 	public GridPane getFanGridPane() {
 		GridPane fanGridPane;
 		try {
@@ -89,7 +88,7 @@ public class FanGridPaneController implements Initializable {
 			fanGridPane.getStylesheets()
 					.add(String.valueOf(FanwiApplication.class.getResource("stylesheet/fan-block.css")));
 		} catch (IOException e) {
-			throw new RuntimeException(e); // TODO Throw this to errorhandler with enum ExceptionType
+			throw new RuntimeException(e);
 		}
 		return fanGridPane;
 	}
