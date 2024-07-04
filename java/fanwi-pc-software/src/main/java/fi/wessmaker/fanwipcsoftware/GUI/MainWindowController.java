@@ -1,6 +1,7 @@
 package fi.wessmaker.fanwipcsoftware.GUI;
 
 import fi.wessmaker.fanwipcsoftware.GUI.infopanel.InfoInstance;
+import fi.wessmaker.fanwipcsoftware.GUI.infopanel.InfoInstanceType;
 import fi.wessmaker.fanwipcsoftware.communication.debug.Debug;
 import fi.wessmaker.fanwipcsoftware.hardware.Fan;
 import javafx.fxml.FXML;
@@ -13,8 +14,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
-
 
 public class MainWindowController implements Initializable {
 
@@ -26,7 +27,7 @@ public class MainWindowController implements Initializable {
 
     @FXML
     private MenuBar menuBar;
-    
+
     @FXML
     private GridPane fan1ContentGridPane;
 
@@ -37,29 +38,32 @@ public class MainWindowController implements Initializable {
     private ToggleButton debugButton;
 
     private FanGridPaneController fanGridPaneController;
-    private int instanceCount = 3;
 
-    InfoInstance[] infoInstances;
+    private ArrayList<InfoInstance> infoInstances = new ArrayList<>();
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Debug.setDebug(debugButton.isSelected());
+        Debug.setDebugging(debugButton.isSelected());
         fanGridPaneController = new FanGridPaneController();
         fan1ContentGridPane.getChildren().add(fanGridPaneController.getFanGridPane());
         debugButton.setSelected(true);
+        initializeInfoPane();
+    }
 
-        infoInstances = new InfoInstance[instanceCount];
 
 
-        //TODO THESE DONT SHOW UP CORRECTLY IN GUI
-        infoInstances[0] = new InfoInstance("Temperature", String.valueOf(Fan.getInstance().getTemeprature()));
-        infoInstances[1] = new InfoInstance("Speed", String.valueOf(Fan.getInstance().getRealSpeed()));
-        infoInstances[2] = new InfoInstance("offset", String.valueOf(Fan.getInstance().getOffset()));
-        
-        for(int i = 0; i < instanceCount; i++){
-            infoVBox.getChildren().add(infoInstances[i].getInstance());
-        }
-
-        
+    private void initializeInfoPane() {
+        try {
+            for (InfoInstanceType instance : InfoInstanceType.values()) {
+                if (instance.isBooleanValue()) {
+                    infoInstances.add(new InfoInstance(instance.getText(), (boolean) instance.getDefaultValue(), instance));
+                } else {
+                    infoInstances.add(new InfoInstance(instance.getText(), String.valueOf(instance.getDefaultValue()), instance));
+                }
+                infoVBox.getChildren().add(infoInstances.getLast().getInstance());
+            }            
+        } catch (Exception e) {}
 
     }
 
@@ -68,11 +72,8 @@ public class MainWindowController implements Initializable {
     @FXML
     void mouseClick(MouseEvent event) {
         debugButton.setOnMouseClicked(mouseClickEvent -> {
-            if (debugButton.isSelected()) {
-                Debug.setDebug(true);
-            } else {
-                Debug.setDebug(false);
-            }
-        });
+        Debug.setDebugging(debugButton.isArmed());
+        System.out.println("Debugging: " + Debug.isDebugging());
+    });
     }
 }

@@ -7,6 +7,8 @@ module fi.wessmaker.fanwipcsoftware {
 
 	opens fi.wessmaker.fanwipcsoftware to javafx.fxml;
     opens fi.wessmaker.fanwipcsoftware.GUI to javafx.fxml;
+    opens fi.wessmaker.fanwipcsoftware.GUI.infopanel to java.fxml;
     exports fi.wessmaker.fanwipcsoftware;
     exports fi.wessmaker.fanwipcsoftware.GUI;
+    exports fi.wessmaker.fanwipcsoftware.GUI.infopanel to javafx.fxml;
 }

@@ -5,6 +5,9 @@ import fi.wessmaker.fanwipcsoftware.communication.debug.Debug;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
@@ -13,84 +16,82 @@ import java.util.Objects;
 public class InfoInstance {
 
 	@FXML
-	private GridPane infoInstancePane;
+	private GridPane infoInstanceGridPane;
 
-	@FXML
 	private Label textLabel;
 
-	@FXML
 	private Label valueLabel;
 
-
-	private int height, width;
 	private boolean booleanValue;
-	
+
+	private InfoInstanceType type;
+
+
 	/**
 	 * Constructor for elements of main window info panel
-	 * */
-	public InfoInstance(String labelText, String labelValue){
+	 */
+	public InfoInstance(String text, String value, InfoInstanceType type) {
 		this.booleanValue = false;
- 		textLabel = new Label(labelText);
-		valueLabel = new Label(labelValue);
-
-		textLabel.setMaxSize(width,height);
-		textLabel.setMinSize(width, height);
-		textLabel.setMinSize(width, height);
-		
-		setText(labelText);
-		setValue(labelValue);
+		this.type = type;
+		textLabel = new Label(text);
+		valueLabel = new Label(value);
 	}
-	
-	
-	public InfoInstance(String labelText, boolean labelValue){
-		this(labelText, String.valueOf(labelValue));
+
+
+
+	public InfoInstance(String labelText, boolean labelValue, InfoInstanceType type) {
+		this(labelText, String.valueOf(labelValue), type);
 		this.booleanValue = true;
 	}
-	
-	
-	
+
+
+
 	/**
 	 * Get instance as FXML GridPane with predefined attributes and styling
+	 * 
 	 * @return GridPane
-	 * */
-	public GridPane getInstance(){
-		GridPane infoInstance = new GridPane();
-		infoInstance.setPrefSize(250, 80);
-		try {
-			infoInstance = FXMLLoader.load(Objects.requireNonNull(FanwiApplication.class.getResource("fxml/info-instance.fxml")));
-			infoInstance.getStylesheets().add(String.valueOf(FanwiApplication.class.getResource("stylesheets/info-instance.css")));
-		}
-		catch (IOException e) {
-			Label errorLabel = new Label("Could not load instance with label: " + "\"" + this.textLabel + "\"");
-			errorLabel.setWrapText(true);
-			infoInstance.getChildren().add(errorLabel);
-			Debug.print(infoInstance, "Instancepane failure: ");
-			return infoInstance;
-		}
-		catch (NullPointerException e){
-			Label errorLabel = new Label("Could not load instance with label: " + "\"" + this.textLabel + "\"");
-			errorLabel.setWrapText(true);
-			infoInstance.getChildren().add(errorLabel);
-			return infoInstance;
-		}
+	 */
+	public GridPane getInstance() throws IOException {
+		GridPane infoInstance;
+		infoInstance = FXMLLoader
+				.load(Objects.requireNonNull(FanwiApplication.class.getResource("fxml/info-instance.fxml")));
+		int textWidth = (int) infoInstance.getColumnConstraints().getFirst().getPrefWidth();
+		int valueWidth = (int) infoInstance.getColumnConstraints().getLast().getPrefWidth();
+		int height = 55; // This height is hardcoded, it determines the InfoInstance height
+		textLabel.setPrefSize(textWidth, height);
+		valueLabel.setPrefSize(valueWidth, height);
+		textLabel.setWrapText(true);
+		infoInstance.setPrefHeight(height);
+		infoInstance.setMinHeight(height);
+		infoInstance.setMaxHeight(height);
+		infoInstance.add(textLabel, 0, 0);
+		infoInstance.add(valueLabel, 1, 0);
+		infoInstance.getStylesheets()
+				.add(String.valueOf(FanwiApplication.class.getResource("stylesheet/info-instance.css")));
 		return infoInstance;
 	}
-	
-	
-	
-	public boolean isBooleanValue(){
+
+
+
+	public boolean isBooleanValue() {
 		return booleanValue;
 	}
-	
-	public void setText(String text){
+
+
+
+	public void setText(String text) {
 		this.textLabel.setText(text);
 	}
-	
-	public void setValue(String value){
+
+
+
+	public void setValue(String value) {
 		this.textLabel.setText(value);
 	}
-	
-	public void setValue(boolean boolValue){
+
+
+
+	public void setValue(boolean boolValue) {
 		this.textLabel.setText(String.valueOf(boolValue));
 	}
 }
