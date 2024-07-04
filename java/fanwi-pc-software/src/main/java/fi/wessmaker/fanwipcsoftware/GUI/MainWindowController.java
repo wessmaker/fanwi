@@ -57,14 +57,15 @@ public class MainWindowController implements Initializable {
         try {
             for (InfoInstanceType instance : InfoInstanceType.values()) {
                 if (instance.isBooleanValue()) {
-                    infoInstances.add(new InfoInstance(instance.getText(), (boolean) instance.getDefaultValue(), instance));
+                    infoInstances.add(new InfoInstance(instance.getText(), (boolean) instance.getValue(), instance));
                 } else {
-                    infoInstances.add(new InfoInstance(instance.getText(), String.valueOf(instance.getDefaultValue()), instance));
+                    infoInstances
+                            .add(new InfoInstance(instance.getText(), String.valueOf(instance.getValue()), instance));
                 }
                 infoVBox.getChildren().add(infoInstances.getLast().getInstance());
-            }            
-        } catch (Exception e) {}
-
+            }
+        } catch (Exception e) {
+        }
     }
 
 
@@ -72,8 +73,8 @@ public class MainWindowController implements Initializable {
     @FXML
     void mouseClick(MouseEvent event) {
         debugButton.setOnMouseClicked(mouseClickEvent -> {
-        Debug.setDebugging(debugButton.isArmed());
-        System.out.println("Debugging: " + Debug.isDebugging());
-    });
+            Debug.setDebugging(debugButton.isArmed());
+            System.out.println("Debugging: " + Debug.isDebugging());
+        });
     }
 }

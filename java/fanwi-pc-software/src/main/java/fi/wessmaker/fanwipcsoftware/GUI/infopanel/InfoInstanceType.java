@@ -18,17 +18,17 @@ public enum InfoInstanceType {
 	TEMPERATURE_DRIVEN("Temp driven", false, true),
 	SPINNING("Spinning", false, true);
 
-
+	
 	private final String text;
 
-	private Object defaultValue;
+	private Object value;
 
 	private boolean booleanValue;
 
 
-	InfoInstanceType(String text, Object defaultValue, boolean booleanValue) {
+	InfoInstanceType(String text, Object value, boolean booleanValue) {
 		this.text = text;
-		this.defaultValue = defaultValue;
+		this.value = value;
 		this.booleanValue = booleanValue;
 	};
 
@@ -40,8 +40,8 @@ public enum InfoInstanceType {
 
 
 
-	public Object getDefaultValue() {
-		return this.defaultValue;
+	public Object getValue() {
+		return this.value;
 	}
 
 
