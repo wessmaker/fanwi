@@ -1,2 +1,2 @@
 # Fanwi
-This is the Fanwi project, Fan with embedded system controlled with phone or PC.
+This is the Fanwi project, pc fan with embedded system to control it using PC or phone.
