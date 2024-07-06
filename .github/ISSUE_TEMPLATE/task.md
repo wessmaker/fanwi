@@ -1,7 +1,7 @@
 ---
 name: Task
-about: Basic task template
-title: "[TASK]"
+about: New generic task
+title: "[New task]"
 labels: task
 assignees: wessmaker
 ---
