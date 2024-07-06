@@ -2,5 +2,39 @@
     leftPanelBg: #101427;
     textBlue : #999dcc;
     menuBarBgColor : #191f3d;
-    contentBgColor : #252842;
+    contentBgColor : #252842;   
+    buttonColor : menuBarBgColor;
+    buttonHoverColor : #252e5a; 
+}
+
+.root{
+    -fx-background-color : leftPanelBg;  
+}
+
+.root .label{
+    -fx-text-fill : textBlue;
+}
+
+#powerButton{
+    -fx-background-radius : 50;
+    -fx-background-color : buttonColor;
+}
+#powerButton:hover{
+    -fx-background-color : buttonHoverColor;
+}
+
+#tempDrivenButton{
+    -fx-background-radius : 50;
+    -fx-background-color : buttonColor;
+}
+#tempDrivenButton:hover{
+    -fx-background-color : buttonHoverColor;
+}
+
+#resetButton{
+    -fx-background-radius : 50;
+    -fx-background-color : buttonColor;
+}
+#resetButton:hover{
+    -fx-background-color : buttonHoverColor;
 }

@@ -4,14 +4,12 @@ import fi.wessmaker.fanwipcsoftware.FanwiApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -52,7 +50,7 @@ public class FanGridPaneController implements Initializable{
 	private TextField offsetStatusField;
 
 	@FXML
-	private Button powerButton;
+	private Label powerButton;
 
 	@FXML
 	private Label powerLabel;
@@ -61,7 +59,7 @@ public class FanGridPaneController implements Initializable{
 	private Label powerStatusLabel;
 
 	@FXML
-	private Button resetButton;
+	private Label resetButton;
 
 	@FXML
 	private Label resetLabel;
@@ -79,7 +77,7 @@ public class FanGridPaneController implements Initializable{
 	private TextField speedStatusField;
 
 	@FXML
-	private Button tempDrivenButton;
+	private Label tempDrivenButton;
 
 	@FXML
 	private Label tempDrivenLabel;

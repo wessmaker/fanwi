@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
@@ -9,7 +8,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane fx:id="fanGridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fi.wessmaker.fanwipcsoftware.GUI.FanGridPaneController">
+<GridPane fx:id="fanGridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="350.0" stylesheets="@../stylesheet/fan-block.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fi.wessmaker.fanwipcsoftware.GUI.FanGridPaneController">
   <columnConstraints>
     <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="350.0" />
   </columnConstraints>
@@ -31,8 +30,8 @@
               </rowConstraints>
                <children>
                   <Label fx:id="powerLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="145.0" text="powerLabel" />
-                  <Button fx:id="powerButton" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="powerButton" GridPane.columnIndex="1" />
                   <Label fx:id="powerStatusLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="40.0" text="powerStatusLabel" GridPane.columnIndex="2" />
+                  <Label fx:id="powerButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="145.0" text="powerButton" GridPane.columnIndex="1" />
                </children>
             </GridPane>
             <GridPane fx:id="controlPane2" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0">
@@ -47,8 +46,8 @@
                </rowConstraints>
                <children>
                   <Label fx:id="tempDrivenLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="145.0" text="tempDrivenLabel" GridPane.rowIndex="1" />
-                  <Button fx:id="tempDrivenButton" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="tempDrivenButton" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Label fx:id="tempDrivenStatusLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="40.0" text="tempDrivenStatusLabel" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label fx:id="tempDrivenButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="145.0" text="tempDrivenButton" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <GridPane fx:id="controlPane3" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0">
@@ -92,8 +91,8 @@
                </rowConstraints>
                <children>
                   <Label fx:id="resetLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="145.0" text="resetLabel" />
-                  <Button fx:id="resetButton" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="resetButton" GridPane.columnIndex="1" />
                   <Label fx:id="resetStatusLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="40.0" text="tempDrivenStatusLabel" GridPane.columnIndex="2" />
+                  <Label fx:id="resetButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="145.0" text="resetButton" GridPane.columnIndex="1" />
                </children>
             </GridPane>
          </children>
