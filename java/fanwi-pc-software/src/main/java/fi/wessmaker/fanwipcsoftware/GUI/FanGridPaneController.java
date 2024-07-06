@@ -4,6 +4,10 @@ import fi.wessmaker.fanwipcsoftware.FanwiApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -15,28 +19,73 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class FanGridPaneController implements Initializable {
-
-	@FXML
-	private HBox controlBox1;
-
-	@FXML
-	private HBox controlBox2;
-
-	@FXML
-	private HBox controlBox3;
-
-	@FXML
-	private HBox controlBox4;
-
-	@FXML
-	private HBox controlBox5;
+public class FanGridPaneController implements Initializable{
 
 	@FXML
 	private VBox controlContainer;
 
 	@FXML
+	private GridPane controlPane1;
+
+	@FXML
+	private GridPane controlPane2;
+
+	@FXML
+	private GridPane controlPane3;
+
+	@FXML
+	private GridPane controlPane4;
+
+	@FXML
+	private GridPane controlPane5;
+
+	@FXML
 	private GridPane fanGridPane;
+
+	@FXML
+	private Label offsetLabel;
+
+	@FXML
+	private Slider offsetSlider;
+
+	@FXML
+	private TextField offsetStatusField;
+
+	@FXML
+	private Button powerButton;
+
+	@FXML
+	private Label powerLabel;
+
+	@FXML
+	private Label powerStatusLabel;
+
+	@FXML
+	private Button resetButton;
+
+	@FXML
+	private Label resetLabel;
+
+	@FXML
+	private Label resetStatusLabel;
+
+	@FXML
+	private Label speedLabel;
+
+	@FXML
+	private Slider speedSlider;
+
+	@FXML
+	private TextField speedStatusField;
+
+	@FXML
+	private Button tempDrivenButton;
+
+	@FXML
+	private Label tempDrivenLabel;
+
+	@FXML
+	private Label tempDrivenStatusLabel;
 
 
 	@Override
