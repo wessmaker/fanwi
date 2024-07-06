@@ -1,58 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<GridPane fx:id="contentGridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fi.wessmaker.fanwipcsoftware.GUI.FanGridPaneController">
+<GridPane fx:id="fanGridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fi.wessmaker.fanwipcsoftware.GUI.FanGridPaneController">
   <columnConstraints>
-      <ColumnConstraints hgrow="ALWAYS" minWidth="20.0" />
-    <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" />
-    <ColumnConstraints hgrow="ALWAYS" minWidth="20.0" />
-      <ColumnConstraints hgrow="ALWAYS" minWidth="20.0" />
+    <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="350.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="130.0" valignment="BOTTOM" vgrow="NEVER" />
-    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="170.0" valignment="CENTER" vgrow="NEVER" />
+    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="125.0" valignment="BOTTOM" vgrow="NEVER" />
+    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="175.0" valignment="CENTER" vgrow="NEVER" />
   </rowConstraints>
    <children>
-      <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+      <VBox fx:id="controlContainer" prefWidth="350.0" GridPane.rowIndex="1">
          <children>
-            <GridPane fx:id="labelGridPane1">
-               <columnConstraints>
-                  <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="95.0" minWidth="95.0" prefWidth="95.0" />
-                  <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
-                  <ColumnConstraints hgrow="NEVER" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="NEVER" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
-                  <ColumnConstraints hgrow="NEVER" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints vgrow="ALWAYS" />
-               </rowConstraints>
-               <children>
-                  <Label fx:id="speedLabel" text="Speed" />
-                  <Label fx:id="offsetLabel" text="Offset" GridPane.rowIndex="1" />
-                  <Label fx:id="speedValueLabel" text="id here" GridPane.columnIndex="2" />
-                  <Label fx:id="offsetValueLabel" text="offset here" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Label fx:id="offsetLabel1" text="TempControl" GridPane.rowIndex="2" />
-                  <Label fx:id="offsetLabel11" prefWidth="100.0" text="tempControlled here" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <Label fx:id="tempControlToggleLabel" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="18.0" text="ON?" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                  <Slider fx:id="offsetSlider" blockIncrement="1.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                  <Slider fx:id="speedSlider" blockIncrement="1.0" GridPane.columnIndex="4" />
-               </children>
-            </GridPane>
+            <HBox fx:id="controlBox1" alignment="CENTER" prefHeight="35.0" />
+            <HBox fx:id="controlBox2" alignment="CENTER" prefHeight="35.0" />
+            <HBox fx:id="controlBox3" alignment="CENTER" prefHeight="35.0" />
+            <HBox fx:id="controlBox4" alignment="CENTER" prefHeight="35.0" />
+            <HBox fx:id="controlBox5" alignment="CENTER" prefHeight="35.0" />
          </children>
-      </GridPane>
+      </VBox>
    </children>
 </GridPane>
