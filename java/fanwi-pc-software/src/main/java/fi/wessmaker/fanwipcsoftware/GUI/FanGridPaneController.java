@@ -84,7 +84,7 @@ public class FanGridPaneController implements Initializable {
 			fanImageView.setFitHeight(120);
 			fanImageView.setPreserveRatio(true);
 			fanImageView.setSmooth(false);
-			fanGridPane.add(fanImageView, 1, 1);
+			fanGridPane.add(fanImageView, 1, 0);
 			fanGridPane.getStylesheets()
 					.add(String.valueOf(FanwiApplication.class.getResource("stylesheet/fan-block.css")));
 		} catch (IOException e) {
