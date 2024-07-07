@@ -9,7 +9,6 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
@@ -18,7 +17,8 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class FanGridPaneController implements Initializable{
+
+public class FanGridPaneController implements Initializable {
 
 	@FXML
 	private VBox controlContainer;

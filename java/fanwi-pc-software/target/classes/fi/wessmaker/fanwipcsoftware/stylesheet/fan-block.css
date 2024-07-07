@@ -1,4 +1,4 @@
-.root{
+*{
     leftPanelBg: #101427;
     textBlue : #999dcc;
     menuBarBgColor : #191f3d;
@@ -46,3 +46,9 @@
 .slider .track{
     -fx-background-color :  textBlue;
 }
+
+.root .statusNode{
+    -fx-background-color : buttonColor;
+    -fx-text-fill : textBlue;
+}
+

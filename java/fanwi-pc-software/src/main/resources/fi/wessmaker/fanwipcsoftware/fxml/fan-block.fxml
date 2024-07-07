@@ -30,7 +30,7 @@
               </rowConstraints>
                <children>
                   <Label fx:id="powerLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="145.0" text="powerLabel" />
-                  <Label fx:id="powerStatusLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="40.0" text="powerStatusLabel" GridPane.columnIndex="2" />
+                  <Label fx:id="powerStatusLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="40.0" styleClass="statusNode" text="powerStatusLabel" GridPane.columnIndex="2" />
                   <Label fx:id="powerButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="145.0" text="powerButton" GridPane.columnIndex="1" />
                </children>
             </GridPane>
@@ -46,7 +46,7 @@
                </rowConstraints>
                <children>
                   <Label fx:id="tempDrivenLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="145.0" text="tempDrivenLabel" GridPane.rowIndex="1" />
-                  <Label fx:id="tempDrivenStatusLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="40.0" text="tempDrivenStatusLabel" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label fx:id="tempDrivenStatusLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="40.0" styleClass="statusNode" text="tempDrivenStatusLabel" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <Label fx:id="tempDrivenButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="145.0" text="tempDrivenButton" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
             </GridPane>
@@ -62,7 +62,7 @@
                <children>
                   <Label fx:id="speedLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="145.0" text="speedLabel" />
                   <Slider fx:id="speedSlider" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="145.0" GridPane.columnIndex="1" />
-                  <TextField fx:id="speedStatusField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="40.0" GridPane.columnIndex="2" />
+                  <TextField fx:id="speedStatusField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="40.0" styleClass="statusNode" GridPane.columnIndex="2" />
                </children>
             </GridPane>
             <GridPane fx:id="controlPane4" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0">
@@ -77,7 +77,7 @@
                <children>
                   <Label fx:id="offsetLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="145.0" text="offsetLabel" />
                   <Slider fx:id="offsetSlider" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="145.0" GridPane.columnIndex="1" />
-                  <TextField fx:id="offsetStatusField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="40.0" GridPane.columnIndex="2" />
+                  <TextField fx:id="offsetStatusField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="40.0" styleClass="statusNode" GridPane.columnIndex="2" />
                </children>
             </GridPane>
             <GridPane fx:id="controlPane5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0">
@@ -91,7 +91,7 @@
                </rowConstraints>
                <children>
                   <Label fx:id="resetLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="145.0" text="resetLabel" />
-                  <Label fx:id="resetStatusLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="40.0" text="tempDrivenStatusLabel" GridPane.columnIndex="2" />
+                  <Label fx:id="resetStatusLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="40.0" styleClass="statusNode" text="tempDrivenStatusLabel" GridPane.columnIndex="2" />
                   <Label fx:id="resetButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="145.0" text="resetButton" GridPane.columnIndex="1" />
                </children>
             </GridPane>
