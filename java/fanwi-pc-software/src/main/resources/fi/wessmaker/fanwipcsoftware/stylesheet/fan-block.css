@@ -3,11 +3,12 @@
     textBlue : #999dcc;
     menuBarBgColor : #191f3d;
     contentBgColor : #252842;   
-    buttonColor : menuBarBgColor;
+    buttonColor : #191f3d;
     buttonHoverColor : #252e5a; 
+
 }
 
-.root{
+#fanGridPane{
     -fx-background-color : leftPanelBg;  
 }
 
@@ -37,4 +38,11 @@
 }
 #resetButton:hover{
     -fx-background-color : buttonHoverColor;
+}
+
+.slider .thumb{
+    -fx-background-color : contentBgColor;
+}
+.slider .track{
+    -fx-background-color :  textBlue;
 }
