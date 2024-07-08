@@ -25,7 +25,8 @@ public class Fan {
 	private static Fan fan;
 
 
-	private Fan(int speed, int offset, double temperature, int realSpeed, int realOffset, boolean spinning, boolean tempControlled, boolean realSpinning, boolean realTempControlled) {
+	private Fan(int speed, int offset, double temperature, int realSpeed, int realOffset, boolean spinning,
+			boolean tempControlled, boolean realSpinning, boolean realTempControlled) {
 		this.speed = speed;
 		this.offset = offset;
 		this.temperature = temperature;
@@ -115,10 +116,14 @@ public class Fan {
 	public int getOffset() {
 		return offset;
 	}
-	
-	public double getTemeprature(){
+
+
+
+	public double getTemeprature() {
 		return temperature;
 	}
+
+
 
 	public boolean isSpinning() {
 		return spinning;

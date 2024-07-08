@@ -1,18 +1,16 @@
 package fi.wessmaker.fanwipcsoftware.GUI;
 
 import fi.wessmaker.fanwipcsoftware.FanwiApplication;
-import fi.wessmaker.fanwipcsoftware.communication.TransmitType;
-import fi.wessmaker.fanwipcsoftware.communication.Writer;
-import fi.wessmaker.fanwipcsoftware.communication.debug.Debug;
-import fi.wessmaker.fanwipcsoftware.hardware.Fan;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,25 +20,52 @@ import java.util.ResourceBundle;
 public class FanGridPaneController implements Initializable {
 
 	@FXML
-	private GridPane contentGridPane;
+	private VBox controlContainer;
 
 	@FXML
-	private GridPane labelGridPane1;
+	private GridPane controlPane1;
+
+	@FXML
+	private GridPane controlPane2;
+
+	@FXML
+	private GridPane controlPane3;
+
+	@FXML
+	private GridPane controlPane4;
+
+	@FXML
+	private GridPane controlPane5;
+
+	@FXML
+	private GridPane fanGridPane;
 
 	@FXML
 	private Label offsetLabel;
 
 	@FXML
-	private Label offsetLabel1;
-
-	@FXML
-	private Label offsetLabel11;
-
-	@FXML
 	private Slider offsetSlider;
 
 	@FXML
-	private Label offsetValueLabel;
+	private TextField offsetStatusField;
+
+	@FXML
+	private Label powerButton;
+
+	@FXML
+	private Label powerLabel;
+
+	@FXML
+	private Label powerStatusLabel;
+
+	@FXML
+	private Label resetButton;
+
+	@FXML
+	private Label resetLabel;
+
+	@FXML
+	private Label resetStatusLabel;
 
 	@FXML
 	private Label speedLabel;
@@ -49,29 +74,103 @@ public class FanGridPaneController implements Initializable {
 	private Slider speedSlider;
 
 	@FXML
-	private Label speedValueLabel;
+	private TextField speedStatusField;
 
 	@FXML
-	private Label tempControlToggleLabel;
+	private Label tempDrivenButton;
+
+	@FXML
+	private Label tempDrivenLabel;
+
+	@FXML
+	private Label tempDrivenStatusLabel;
 
 
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
-		speedSlider.setOnMouseDragged(mouseDrag -> {
-			onSpeedSliderDrag();
+		powerLabel.setText("Status");
+		tempDrivenLabel.setText("Temp driver");
+		speedLabel.setText("Speed");
+		offsetLabel.setText("Offset");
+		resetLabel.setText("Reset");
+		powerButton.setText("Power");
+		tempDrivenButton.setText("Drive");
+		resetButton.setText("RESET");
+		setPowerStatus(false);
+		setTempDrivenStatus(false);
+		setResetStatus(false);
+		setSpeedStatus(0);
+		setOffsetStatus(0);
+		powerButton.setOnMouseClicked(mouseClickEvent -> {
 		});
-		offsetSlider.setOnMouseDragged(mouseDrag -> {
-			onOffsetSliderDrag();
+		tempDrivenButton.setOnMouseClicked(mouseClickEvent -> {
 		});
-		tempControlToggleLabel.setOnMouseClicked(mouseClick -> {
-			onTempControlClick();
+		resetButton.setOnMouseClicked(mouseClickEvent -> {
 		});
-		if (Fan.getInstance().isTempControlled()) {
-			getTempControlToggleLabel().setText("ON");
-		} else {
-			getTempControlToggleLabel().setText("OFF");
-		}
+		speedSlider.setOnMousePressed(mousePressEvent -> {
+			setSpeedStatus((int) speedSlider.getValue());
+		});
+		speedSlider.setOnMouseDragged(mouseDragEvent -> {
+			setSpeedStatus((int) speedSlider.getValue());
+		});
+		offsetSlider.setOnMousePressed(mousePressEvent -> {
+			setOffsetStatus((int) offsetSlider.getValue());
+		});
+		offsetSlider.setOnMouseDragged(mouseDragEvent -> {
+			setOffsetStatus((int) offsetSlider.getValue());
+		});
+		speedStatusField.textProperty().addListener((observable, oldValue, newValue) -> {
+			if (newValue.matches("\\d+") && !newValue.isEmpty()) {
+				speedSlider.setValue(Integer.parseInt(speedStatusField.getText()));
+			}
+			if (newValue.isEmpty()) {
+				setSpeedStatus(0);
+			} else {
+				setSpeedStatus((int) speedSlider.getValue()); // TODO Make this throw error in GUI for the user
+			}
+		});
+		offsetStatusField.textProperty().addListener((observable, oldValue, newValue) -> {
+			if (newValue.matches("\\d+") && !newValue.isEmpty()) {
+				offsetSlider.setValue(Integer.parseInt(offsetStatusField.getText()));
+			}
+			if (newValue.isEmpty()) {
+				setOffsetStatus(0);
+			} else {
+				setOffsetStatus((int) offsetSlider.getValue()); // TODO Make this throw error in GUI for the user
+			}
+		});
 	}
+
+
+
+	public void setPowerStatus(boolean powerStatus) {
+		powerStatusLabel.setText(String.valueOf(powerStatus));
+	}
+
+
+
+	public void setTempDrivenStatus(boolean tempDrivenStatus) {
+		tempDrivenStatusLabel.setText(String.valueOf(tempDrivenStatus));
+	}
+
+
+
+	public void setResetStatus(boolean resetStatus) {
+		resetStatusLabel.setText(String.valueOf(resetStatus));
+	}
+
+
+
+	public void setSpeedStatus(int speedValue) {
+		speedStatusField.setText(String.valueOf(speedValue));
+	}
+
+
+
+	public void setOffsetStatus(int offsetValue) {
+		offsetStatusField.setText(String.valueOf(offsetValue));
+	}
+
 
 
 	public GridPane getFanGridPane() {
@@ -84,92 +183,12 @@ public class FanGridPaneController implements Initializable {
 			fanImageView.setFitHeight(120);
 			fanImageView.setPreserveRatio(true);
 			fanImageView.setSmooth(false);
-			fanGridPane.add(fanImageView, 1, 1);
+			fanGridPane.add(fanImageView, 0, 0);
 			fanGridPane.getStylesheets()
 					.add(String.valueOf(FanwiApplication.class.getResource("stylesheet/fan-block.css")));
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
 		return fanGridPane;
-	}
-
-
-
-	private void onTempControlClick() {
-		switch (getTempControlToggleLabel().getText().toLowerCase()) {
-			case "on" -> {
-				Fan.getInstance().setTempControlled(false);
-				Debug.print(getTempControlToggleLabel().getText(), "TempControlClick");
-				break;
-			}
-			case "off" -> {
-				Fan.getInstance().setRealTempControlled(true);
-				Debug.print(getTempControlToggleLabel().getText(), "TempControlClick");
-				break;
-			}
-		}
-		// To make sure that it doesn't fail or display different value
-		if (Fan.getInstance().isTempControlled()) {
-			getTempControlToggleLabel().setText("ON");
-		} else {
-			getTempControlToggleLabel().setText("OFF");
-		}
-		Debug.print(Fan.getInstance().isTempControlled(), "Fan: isTempControlled");
-	}
-
-
-
-	private void onSpeedSliderDrag() {
-		Writer.getInstance().write(TransmitType.SPEED, getSpeedSlider().getValue());
-		Debug.print(String.format("%.2f", getSpeedSlider().getValue()), "SpeedSliderDrag");
-	}
-
-
-
-	private void onOffsetSliderDrag() {
-		Writer.getInstance().write(TransmitType.OFFSET, getOffsetSlider().getValue());
-		Debug.print(String.format("%.2f", getOffsetSlider().getValue()), "OffsetSliderDrag");
-	}
-
-
-
-	public Label getTempControlToggleLabel() {
-		return tempControlToggleLabel;
-	}
-
-
-
-	public Label getSpeedValueLabel() {
-		return speedValueLabel;
-	}
-
-
-
-	public Slider getSpeedSlider() {
-		return speedSlider;
-	}
-
-
-
-	public Label getSpeedLabel() {
-		return speedLabel;
-	}
-
-
-
-	public Label getOffsetValueLabel() {
-		return offsetValueLabel;
-	}
-
-
-
-	public Slider getOffsetSlider() {
-		return offsetSlider;
-	}
-
-
-
-	public Label getOffsetLabel() {
-		return offsetLabel;
 	}
 }

@@ -1,13 +1,9 @@
 package fi.wessmaker.fanwipcsoftware.GUI.infopanel;
 
 import fi.wessmaker.fanwipcsoftware.FanwiApplication;
-import fi.wessmaker.fanwipcsoftware.communication.debug.Debug;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;

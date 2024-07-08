@@ -1,60 +1,71 @@
-.root{
-    leftPanelBg: #101427;
-    textBlue : #999dcc;
-    menuBarBgColor : #191f3d;
-    contentBgColor : #252842;
-
-
-
+* {
+  leftpanelbg: #101427;
+  textblue: #999dcc;
+  menubarbgcolor: #191f3d;
+  contentbgcolor: #252842;
+  buttoncolor: #191f3d;
+  buttonhovercolor: #252e5a;
 }
 
-
-#contentGridPane{
-    -fx-background-color : leftPanelBg;
-    -fx-background-radius : 15;
-
-    -fx-border-color : menuBarBgColor;
-    -fx-border-width : 5;
-    -fx-border-radius : 15
+#fanGridPane {
+  -fx-background-color: leftPanelBg;
 }
 
-#contentGridPane .label{
-    -fx-font-size : 16px;
-    -fx-font-weight : bold;
-    -fx-text-fill : textBlue;
+.root .label {
+  -fx-text-fill: textBlue;
+  -fx-font-size: 16;
+}
+.root .statusNode {
+  -fx-background-color: buttonColor;
+  -fx-text-fill: textBlue;
+  -fx-font-size: 16;
 }
 
-
-
-#contentGridPane{
-    -fx-background-color : leftPanelBg;
-    -fx-background-radius : 15;
-
-    -fx-border-color : menuBarBgColor;
-    -fx-border-width : 5;
-    -fx-border-radius : 15
+#powerLabel {
+  -fx-font-weight: bold;
+}
+#tempDrivenLabel {
+  -fx-font-weight: bold;
+}
+#speedLabel {
+  -fx-font-weight: bold;
+}
+#offsetLabel {
+  -fx-font-weight: bold;
+}
+#resetLabel {
+  -fx-font-weight: bold;
 }
 
-#tempControlToggleLabel{
-    -fx-background-color : menuBarBgColor;
-    -fx-background-radius : 3;
-
-
-    -fx-border-color : white;
-    -fx-border-radius : 2;
-    -fx-border-radius : 3;
-    -fx-border-width : 0;
+#powerButton {
+  -fx-background-radius: 50;
+  -fx-background-color: buttonColor;
 }
-#tempControlToggleLabel:hover{
-    -fx-border-width : 1;
+#powerButton:hover {
+  -fx-background-color: buttonHoverColor;
 }
 
-#labelGridPane1 .slider .track{
-    -fx-background-color : menuBarBgColor;
+#tempDrivenButton {
+  -fx-background-radius: 50;
+  -fx-background-color: buttonColor;
+}
+#tempDrivenButton:hover {
+  -fx-background-color: buttonHoverColor;
 }
 
-#labelGridPane1 .thumb{
-    -fx-background-color : white;
-    -fx-pref-height : 17;
-    -fx-pref-width : 10;
+#resetButton {
+  -fx-background-radius: 50;
+  -fx-background-color: buttonColor;
+}
+#resetButton:hover {
+  -fx-background-color: buttonHoverColor;
+}
+
+.slider .thumb {
+  -fx-background-color: contentBgColor;
+  -fx-pref-width: 12;
+  -fx-pref-height: 29;
+}
+.slider .track {
+  -fx-background-color: textBlue;
 }

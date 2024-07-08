@@ -3,14 +3,12 @@ package fi.wessmaker.fanwipcsoftware.GUI;
 import fi.wessmaker.fanwipcsoftware.GUI.infopanel.InfoInstance;
 import fi.wessmaker.fanwipcsoftware.GUI.infopanel.InfoInstanceType;
 import fi.wessmaker.fanwipcsoftware.communication.debug.Debug;
-import fi.wessmaker.fanwipcsoftware.hardware.Fan;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.net.URL;
@@ -29,9 +27,6 @@ public class MainWindowController implements Initializable {
     private MenuBar menuBar;
 
     @FXML
-    private GridPane fan1ContentGridPane;
-
-    @FXML
     private VBox infoVBox;
 
     @FXML
@@ -46,7 +41,7 @@ public class MainWindowController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Debug.setDebugging(debugButton.isSelected());
         fanGridPaneController = new FanGridPaneController();
-        fan1ContentGridPane.getChildren().add(fanGridPaneController.getFanGridPane());
+        contentGridPane.add(fanGridPaneController.getFanGridPane(), 1, 1);
         debugButton.setSelected(true);
         initializeInfoPane();
     }
