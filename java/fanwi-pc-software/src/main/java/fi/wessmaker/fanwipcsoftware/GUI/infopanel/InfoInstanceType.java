@@ -1,7 +1,4 @@
 package fi.wessmaker.fanwipcsoftware.GUI.infopanel;
-
-import java.security.cert.TrustAnchor;
-
 /**
  * Stores different infoinstance types
  * <p>

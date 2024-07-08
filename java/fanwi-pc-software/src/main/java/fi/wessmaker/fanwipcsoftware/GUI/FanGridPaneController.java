@@ -87,10 +87,11 @@ public class FanGridPaneController implements Initializable {
 	private Label tempDrivenStatusLabel;
 
 
+	Label testLabel;
+
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 	}
-
 
 
 	public GridPane getFanGridPane() {

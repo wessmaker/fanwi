@@ -3,7 +3,6 @@ package fi.wessmaker.fanwipcsoftware.GUI;
 import fi.wessmaker.fanwipcsoftware.GUI.infopanel.InfoInstance;
 import fi.wessmaker.fanwipcsoftware.GUI.infopanel.InfoInstanceType;
 import fi.wessmaker.fanwipcsoftware.communication.debug.Debug;
-import fi.wessmaker.fanwipcsoftware.hardware.Fan;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.MenuBar;
