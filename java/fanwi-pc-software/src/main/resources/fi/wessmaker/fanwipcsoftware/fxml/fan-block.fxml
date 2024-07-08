@@ -91,7 +91,7 @@
                </rowConstraints>
                <children>
                   <Label fx:id="resetLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="120.0" text="resetLabel" />
-                  <Label fx:id="resetStatusLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="55.0" styleClass="statusNode" text="tempDrivenStatusLabel" GridPane.columnIndex="2" />
+                  <Label fx:id="resetStatusLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="55.0" styleClass="statusNode" text="resetStatusLabel" GridPane.columnIndex="2" />
                   <Label fx:id="resetButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="140.0" text="resetButton" GridPane.columnIndex="1" />
                </children>
             </GridPane>
