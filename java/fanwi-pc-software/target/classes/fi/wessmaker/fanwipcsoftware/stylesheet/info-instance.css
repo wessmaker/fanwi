@@ -1,12 +1,11 @@
-.root{
-    leftPanelBg: #101427;
-    textBlue : #999dcc;
-    menuBarBgColor : #191f3d;
-    contentBgColor : #252842;
-
-    -fx-background-color : leftPanelBg;
+.root {
+  leftpanelbg: #101427;
+  textblue: #999dcc;
+  menubarbgcolor: #191f3d;
+  contentbgcolor: #252842;
+  -fx-background-color: leftPanelBg;
 }
-.root .label{
-    -fx-text-fill : textBlue;
-    -fx-font-size : 22px;
+.root .label {
+  -fx-text-fill: textBlue;
+  -fx-font-size: 22px;
 }

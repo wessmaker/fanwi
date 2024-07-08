@@ -1,31 +1,27 @@
-.root{
-    leftPanelBg: #101427;
-    textBlue : #999dcc;
-    menuBarBgColor : #191f3d;
-    contentBgColor : #252842;
-
-    -fx-background-color : transparent;
+.root {
+  leftpanelbg: #101427;
+  textblue: #999dcc;
+  menubarbgcolor: #191f3d;
+  contentbgcolor: #252842;
+  -fx-background-color: transparent;
 }
 
-
-#infoVBox{
-    -fx-background-color : leftPanelBg;
+#infoVBox {
+  -fx-background-color: leftPanelBg;
 }
 
-
-#leftLowerGridPane{
-    -fx-background-color : leftPanelBg;
+#leftLowerGridPane {
+  -fx-background-color: leftPanelBg;
 }
 
-#menuBar{
-    -fx-background-color : menuBarBgColor;
+#menuBar {
+  -fx-background-color: menuBarBgColor;
 }
 
-#menuBar .menu .label{
-    -fx-text-fill : textBlue;
+#menuBar .menu .label {
+  -fx-text-fill: textBlue;
 }
 
-#contentGridPane{
-    -fx-background-color : contentBgColor;
+#contentGridPane {
+  -fx-background-color: contentBgColor;
 }
-

@@ -125,9 +125,8 @@ public class FanGridPaneController implements Initializable {
 			}
 			if (newValue.isEmpty()) {
 				setSpeedStatus(0);
-			} 
-			else {
-				setSpeedStatus((int) speedSlider.getValue());	// TODO Make this throw error in GUI for the user
+			} else {
+				setSpeedStatus((int) speedSlider.getValue()); // TODO Make this throw error in GUI for the user
 			}
 		});
 		offsetStatusField.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -136,9 +135,8 @@ public class FanGridPaneController implements Initializable {
 			}
 			if (newValue.isEmpty()) {
 				setOffsetStatus(0);
-			} 
-			else {
-				setOffsetStatus((int) offsetSlider.getValue());	// TODO Make this throw error in GUI for the user
+			} else {
+				setOffsetStatus((int) offsetSlider.getValue()); // TODO Make this throw error in GUI for the user
 			}
 		});
 	}
