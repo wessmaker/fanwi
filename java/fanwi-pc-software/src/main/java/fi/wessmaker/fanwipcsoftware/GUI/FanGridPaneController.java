@@ -93,34 +93,61 @@ public class FanGridPaneController implements Initializable {
 		speedLabel.setText("Speed");
 		offsetLabel.setText("Offset");
 		resetLabel.setText("Reset");
-
 		powerButton.setText("Power");
 		tempDrivenButton.setText("Drive");
 		resetButton.setText("RESET");
-
 		setPowerStatus(false);
 		setTempDrivenStatus(false);
 		setResetStatus(false);
 		setSpeedStatus(0);
 		setOffsetStatus(0);
+		powerButton.setOnMouseClicked(mouseClickEvent -> {
+		});
+		tempDrivenButton.setOnMouseClicked(mouseClickEvent -> {
+		});
+		resetButton.setOnMouseClicked(mouseClickEvent -> {
+		});
+		speedSlider.setOnMousePressed(mousePressEvent -> {
+		});
+		speedSlider.setOnMouseDragged(mouseDragEvent -> {
+		});
+		offsetSlider.setOnMousePressed(mousePressEvent -> {
+		});
+		offsetSlider.setOnMouseDragged(mouseDragEvent -> {
+		});
 	}
 
 
-	public void setPowerStatus(boolean powerStatus){
+
+	public void setPowerStatus(boolean powerStatus) {
 		powerStatusLabel.setText(String.valueOf(powerStatus));
 	}
-	public void setTempDrivenStatus(boolean tempDrivenStatus){
+
+
+
+	public void setTempDrivenStatus(boolean tempDrivenStatus) {
 		tempDrivenStatusLabel.setText(String.valueOf(tempDrivenStatus));
 	}
-	public void setResetStatus(boolean resetStatus){
+
+
+
+	public void setResetStatus(boolean resetStatus) {
 		resetStatusLabel.setText(String.valueOf(resetStatus));
 	}
-	public void setSpeedStatus(int speedValue){
+
+
+
+	public void setSpeedStatus(int speedValue) {
 		speedStatusField.setText(String.valueOf(speedValue));
 	}
-	public void setOffsetStatus(int offsetValue){
+
+
+
+	public void setOffsetStatus(int offsetValue) {
 		offsetStatusField.setText(String.valueOf(offsetValue));
 	}
+
+
 
 	public GridPane getFanGridPane() {
 		GridPane fanGridPane;
