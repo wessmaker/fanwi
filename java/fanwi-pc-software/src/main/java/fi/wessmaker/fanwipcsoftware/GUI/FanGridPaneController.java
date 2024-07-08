@@ -17,7 +17,6 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-
 public class FanGridPaneController implements Initializable {
 
 	@FXML
@@ -86,9 +85,18 @@ public class FanGridPaneController implements Initializable {
 	@FXML
 	private Label tempDrivenStatusLabel;
 
+
+	
+
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
+		powerLabel.setText("Status");
+		tempDrivenLabel.setText("Temp driver");
+		speedLabel.setText("Speed");
+		offsetLabel.setText("Offset");
+		resetLabel.setText("Reset");
 	}
+
 
 
 	public GridPane getFanGridPane() {
