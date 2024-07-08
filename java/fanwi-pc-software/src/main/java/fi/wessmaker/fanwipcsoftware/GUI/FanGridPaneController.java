@@ -95,6 +95,10 @@ public class FanGridPaneController implements Initializable {
 		speedLabel.setText("Speed");
 		offsetLabel.setText("Offset");
 		resetLabel.setText("Reset");
+
+		powerButton.setText("Power");
+		tempDrivenButton.setText("Drive");
+		resetButton.setText("RESET");
 	}
 
 
