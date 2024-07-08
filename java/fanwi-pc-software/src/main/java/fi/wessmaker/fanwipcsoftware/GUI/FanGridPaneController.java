@@ -86,8 +86,6 @@ public class FanGridPaneController implements Initializable {
 	private Label tempDrivenStatusLabel;
 
 
-	
-
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		powerLabel.setText("Status");
@@ -99,9 +97,30 @@ public class FanGridPaneController implements Initializable {
 		powerButton.setText("Power");
 		tempDrivenButton.setText("Drive");
 		resetButton.setText("RESET");
+
+		setPowerStatus(false);
+		setTempDrivenStatus(false);
+		setResetStatus(false);
+		setSpeedStatus(0);
+		setOffsetStatus(0);
 	}
 
 
+	public void setPowerStatus(boolean powerStatus){
+		powerStatusLabel.setText(String.valueOf(powerStatus));
+	}
+	public void setTempDrivenStatus(boolean tempDrivenStatus){
+		tempDrivenStatusLabel.setText(String.valueOf(tempDrivenStatus));
+	}
+	public void setResetStatus(boolean resetStatus){
+		resetStatusLabel.setText(String.valueOf(resetStatus));
+	}
+	public void setSpeedStatus(int speedValue){
+		speedStatusField.setText(String.valueOf(speedValue));
+	}
+	public void setOffsetStatus(int offsetValue){
+		offsetStatusField.setText(String.valueOf(offsetValue));
+	}
 
 	public GridPane getFanGridPane() {
 		GridPane fanGridPane;
