@@ -1,56 +1,55 @@
-*{
-    leftPanelBg: #101427;
-    textBlue : #999dcc;
-    menuBarBgColor : #191f3d;
-    contentBgColor : #252842;   
-    buttonColor : #191f3d;
-    buttonHoverColor : #252e5a; 
-
+* {
+  leftpanelbg: #101427;
+  textblue: #999dcc;
+  menubarbgcolor: #191f3d;
+  contentbgcolor: #252842;
+  buttoncolor: #191f3d;
+  buttonhovercolor: #252e5a;
 }
 
-#fanGridPane{
-    -fx-background-color : leftPanelBg;  
+#fanGridPane {
+  -fx-background-color: leftPanelBg;
 }
 
-.root .label{
-    -fx-text-fill : textBlue;
+.root .label {
+  -fx-text-fill: textBlue;
+}
+.root .statusNode {
+    -fx-background-color: buttonColor;
+    -fx-text-fill: textBlue;
 }
 
-#powerButton{
-    -fx-background-radius : 50;
-    -fx-background-color : buttonColor;
+#powerButton {
+  -fx-background-radius: 50;
+  -fx-background-color: buttonColor;
 }
-#powerButton:hover{
-    -fx-background-color : buttonHoverColor;
-}
-
-#tempDrivenButton{
-    -fx-background-radius : 50;
-    -fx-background-color : buttonColor;
-}
-#tempDrivenButton:hover{
-    -fx-background-color : buttonHoverColor;
+#powerButton:hover {
+  -fx-background-color: buttonHoverColor;
 }
 
-#resetButton{
-    -fx-background-radius : 50;
-    -fx-background-color : buttonColor;
+#tempDrivenButton {
+  -fx-background-radius: 50;
+  -fx-background-color: buttonColor;
 }
-#resetButton:hover{
-    -fx-background-color : buttonHoverColor;
-}
-
-.slider .thumb{
-    -fx-background-color : contentBgColor;
-    -fx-pref-width : 12;
-    -fx-pref-height : 29;
-}
-.slider .track{
-    -fx-background-color :  textBlue;
+#tempDrivenButton:hover {
+  -fx-background-color: buttonHoverColor;
 }
 
-.root .statusNode{
-    -fx-background-color : buttonColor;
-    -fx-text-fill : textBlue;
+#resetButton {
+  -fx-background-radius: 50;
+  -fx-background-color: buttonColor;
 }
+#resetButton:hover {
+  -fx-background-color: buttonHoverColor;
+}
+
+.slider .thumb {
+  -fx-background-color: contentBgColor;
+  -fx-pref-width: 12;
+  -fx-pref-height: 29;
+}
+.slider .track {
+  -fx-background-color: textBlue;
+}
+
 
