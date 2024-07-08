@@ -61,7 +61,7 @@
                </rowConstraints>
                <children>
                   <Label fx:id="speedLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="120.0" text="speedLabel" />
-                  <Slider fx:id="speedSlider" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="140.0" GridPane.columnIndex="1" />
+                  <Slider fx:id="speedSlider" blockIncrement="1.0" majorTickUnit="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="1" prefHeight="1.0" prefWidth="140.0" GridPane.columnIndex="1" />
                   <TextField fx:id="speedStatusField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="55.0" styleClass="statusNode" GridPane.columnIndex="2" />
                </children>
             </GridPane>
@@ -76,7 +76,7 @@
                </rowConstraints>
                <children>
                   <Label fx:id="offsetLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="120.0" text="offsetLabel" />
-                  <Slider fx:id="offsetSlider" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="140.0" GridPane.columnIndex="1" />
+                  <Slider fx:id="offsetSlider" blockIncrement="1.0" majorTickUnit="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="1" prefHeight="1.0" prefWidth="140.0" GridPane.columnIndex="1" />
                   <TextField fx:id="offsetStatusField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="55.0" styleClass="statusNode" GridPane.columnIndex="2" />
                </children>
             </GridPane>

@@ -42,6 +42,8 @@
 
 .slider .thumb{
     -fx-background-color : contentBgColor;
+    -fx-pref-width : 12;
+    -fx-pref-height : 29;
 }
 .slider .track{
     -fx-background-color :  textBlue;
