@@ -108,12 +108,38 @@ public class FanGridPaneController implements Initializable {
 		resetButton.setOnMouseClicked(mouseClickEvent -> {
 		});
 		speedSlider.setOnMousePressed(mousePressEvent -> {
+			setSpeedStatus((int) speedSlider.getValue());
 		});
 		speedSlider.setOnMouseDragged(mouseDragEvent -> {
+			setSpeedStatus((int) speedSlider.getValue());
 		});
 		offsetSlider.setOnMousePressed(mousePressEvent -> {
+			setOffsetStatus((int) offsetSlider.getValue());
 		});
 		offsetSlider.setOnMouseDragged(mouseDragEvent -> {
+			setOffsetStatus((int) offsetSlider.getValue());
+		});
+		speedStatusField.textProperty().addListener((observable, oldValue, newValue) -> {
+			if (newValue.matches("\\d+") && !newValue.isEmpty()) {
+				speedSlider.setValue(Integer.parseInt(speedStatusField.getText()));
+			}
+			if (newValue.isEmpty()) {
+				setSpeedStatus(0);
+			} 
+			else {
+				setSpeedStatus((int) speedSlider.getValue());	// TODO Make this throw error in GUI for the user
+			}
+		});
+		offsetStatusField.textProperty().addListener((observable, oldValue, newValue) -> {
+			if (newValue.matches("\\d+") && !newValue.isEmpty()) {
+				offsetSlider.setValue(Integer.parseInt(offsetStatusField.getText()));
+			}
+			if (newValue.isEmpty()) {
+				setOffsetStatus(0);
+			} 
+			else {
+				setOffsetStatus((int) offsetSlider.getValue());	// TODO Make this throw error in GUI for the user
+			}
 		});
 	}
 
