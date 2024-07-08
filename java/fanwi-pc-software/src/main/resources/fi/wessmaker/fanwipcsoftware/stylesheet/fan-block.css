@@ -13,10 +13,28 @@
 
 .root .label {
   -fx-text-fill: textBlue;
+  -fx-font-size: 16;
 }
 .root .statusNode {
-    -fx-background-color: buttonColor;
-    -fx-text-fill: textBlue;
+  -fx-background-color: buttonColor;
+  -fx-text-fill: textBlue;
+  -fx-font-size: 16;
+}
+
+#powerLabel {
+  -fx-font-weight: bold;
+}
+#tempDrivenLabel {
+  -fx-font-weight: bold;
+}
+#speedLabel {
+  -fx-font-weight: bold;
+}
+#offsetLabel {
+  -fx-font-weight: bold;
+}
+#resetLabel {
+  -fx-font-weight: bold;
 }
 
 #powerButton {
@@ -51,5 +69,3 @@
 .slider .track {
   -fx-background-color: textBlue;
 }
-
-
