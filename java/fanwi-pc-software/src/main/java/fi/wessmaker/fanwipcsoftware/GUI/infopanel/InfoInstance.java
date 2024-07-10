@@ -1,6 +1,8 @@
 package fi.wessmaker.fanwipcsoftware.GUI.infopanel;
 
 import fi.wessmaker.fanwipcsoftware.FanwiApplication;
+import fi.wessmaker.fanwipcsoftware.utility.GuiUtility;
+import fi.wessmaker.fanwipcsoftware.utility.StyleClassType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -54,7 +56,7 @@ public class InfoInstance {
 		double instanceHeight = 55;
 		infoInstance = FXMLLoader
 				.load(Objects.requireNonNull(FanwiApplication.class.getResource("fxml/info-instance.fxml")));
-		infoInstance.setPrefHeight(instanceHeight); 
+		infoInstance.setPrefHeight(instanceHeight);
 		infoInstance.setMinHeight(instanceHeight);
 		infoInstance.setMaxHeight(instanceHeight);
 		infoInstance.add(this.textLabel, 0, 0);

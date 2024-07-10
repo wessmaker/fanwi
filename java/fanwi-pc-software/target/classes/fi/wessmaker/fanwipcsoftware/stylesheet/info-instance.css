@@ -10,12 +10,31 @@
 .root .label{
   -fx-text-fill : textBlue;
 }
+
+/*
+InfoInstance gridPane sizes: 
+   150     100   
+ ----------------
+| text  | value | 30
+ ---------------
+*/
+
 .root .textLabel{
+  -fx-pref-width : 150;
+  -fx-pref-height : 30;
+  -fx-alignment : center;
   -fx-font-size : 20px; 
 }
 .root .valueLabel{
+  -fx-pref-width : 80;
+  -fx-pref-height : 30;
+  -fx-alignment : center;
   -fx-background-color : buttoncolor;
   -fx-background-radius : 50;
+  
   -fx-font-size : 20px;
   -fx-font-weight : bold;
+}
+.root .hoverable:hover{
+  -fx-background-color : buttonhovercolor;
 }
