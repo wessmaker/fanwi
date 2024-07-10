@@ -8,15 +8,14 @@ package fi.wessmaker.fanwipcsoftware.GUI.infopanel;
  * <p\>
  */
 public enum InfoInstanceType {
-
-	SPEED("Speed", -1, false),
-	TEMPERATURE("Temp", -1f, false),
-	OFFSET("Offset", -1, false),
 	CONNECTION("Connection", false, true),
+	SPINNING("Spinning", false, true),
+	SPEED("Speed", -1, false),
 	TEMPERATURE_DRIVEN("Temp driven", false, true),
-	SPINNING("Spinning", false, true);
+	TEMPERATURE("Temp", -1f, false),
+	OFFSET("Offset", -1, false);
 
-
+	
 	private final String text;
 
 	private Object value;

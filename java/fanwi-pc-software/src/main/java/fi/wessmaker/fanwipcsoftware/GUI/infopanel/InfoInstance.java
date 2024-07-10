@@ -70,7 +70,7 @@ public class InfoInstance {
 
 
 	public boolean isBooleanValue() {
-		return booleanValue;
+		return this.booleanValue;
 	}
 
 
