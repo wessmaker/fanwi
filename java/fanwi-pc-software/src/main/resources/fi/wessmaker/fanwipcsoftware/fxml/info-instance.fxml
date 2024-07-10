@@ -14,7 +14,7 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label styleClass="textLabel" text="Connection" />
+      <Label styleClass="textLabel" text="Temp driven" />
       <Label styleClass="valueLabel" text="True" textAlignment="CENTER" GridPane.columnIndex="1" />
    </children>
 </GridPane>
