@@ -1,11 +1,21 @@
-.root {
+*{
   leftpanelbg: #101427;
   textblue: #999dcc;
   menubarbgcolor: #191f3d;
   contentbgcolor: #252842;
-  -fx-background-color: leftPanelBg;
+  buttoncolor: #191f3d;
+  buttonhovercolor: #252e5a;
+  -fx-background-color : leftpanelbg;
 }
-.root .label {
-  -fx-text-fill: textBlue;
-  -fx-font-size: 22px;
+.root .label{
+  -fx-text-fill : textBlue;
+}
+.root .textLabel{
+  -fx-font-size : 20px; 
+}
+.root .valueLabel{
+  -fx-background-color : buttoncolor;
+  -fx-background-radius : 50;
+  -fx-font-size : 20px;
+  -fx-font-weight : bold;
 }
