@@ -27,47 +27,31 @@ public class GuiUtility {
 	}
 
 
-	/**
-	 *  Checks for predefined coloring style if those are set and removes if found.
-	 * <p>
-	 * Sets selected coloring style after removal
-	 * <p>
-	 * Doesn't affect other styleclasses
-	 * <p>
-	 * Sets predefined styleclass to node
-	 * @return used defined styleClassType -> true <p>
-	 * used wrong styleClassType -> false
-	 */
-	public static void setStatusColoring(Node node, StyleClassType styleClassType){
-		for (int i = 0; i < node.getStyleClass().size(); i++){
+
+	public static void setStatusStylingClass(Node node, StyleClassType type) {
+		switch (type) {
+			case ENABLED_STYLE:
+				break;
+			case DISABLED_STYLE:
+				break;
+			case WAITING_STYLE:
+				break;
+			default:
+				return; // This prevents accidentally deletion in case that type is doesn't match
+		}
+		for (int i = 0; i > node.getStyleClass().toArray().length; i++) {
 			switch (node.getStyleClass().get(i)) {
-				case StyleClassType.ENABLED_STYLE_STYLE.getStyleClassName():
+				case "enabled_styling":
 					removeStyleClass(node, StyleClassType.ENABLED_STYLE);
 					break;
-				case StyleClassType.DISABLED_STYLE.getStyleClassName():
+				case "disabled_styling":
 					removeStyleClass(node, StyleClassType.DISABLED_STYLE);
 					break;
-				case: StyleClassType.WAITING_STYLE.getStyleClassName()
+				case "waiting_styling":
 					removeStyleClass(node, StyleClassType.WAITING_STYLE);
 					break;
 			}
 		}
-		switch (styleClassType) {
-			case StyleClassType.ENABLED_STYLE_STYLE.getStyleClassName():
-				setStyleClass(node, StyleClassType.ENABLED_STYLE);
-				return true;
-				break;
-			case StyleClassType.DISABLED_STYLE.getStyleClassName():
-				setStyleClass(node, StyleClassType.DISABLED_STYLE);
-				return true;
-				break;
-			case: StyleClassType.WAITING_STYLE.getStyleClassName()
-				setStyleClass(node, StyleClassType.WAITING_STYLE);
-				return true;
-				break;
-			default:
-				return false;
-				break;
-		}
+		setStyleClass(node, type);
 	}
 }

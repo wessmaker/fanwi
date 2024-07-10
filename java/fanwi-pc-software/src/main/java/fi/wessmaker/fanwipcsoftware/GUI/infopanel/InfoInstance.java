@@ -33,9 +33,8 @@ public class InfoInstance {
 		this.type = type;
 		textLabel = new Label(text);
 		valueLabel = new Label(value);
-		valueLabel.getStyleClass().addAll("valueLabel");
 		textLabel.getStyleClass().addAll("textLabel");
-		
+		valueLabel.getStyleClass().addAll("valueLabel");
 	}
 
 
@@ -48,7 +47,7 @@ public class InfoInstance {
 
 
 	/**
-	 * Get instance as FXML GridPane with predefined attributes and styling
+	 * Get new instance as FXML GridPane with predefined attributes and styling
 	 * 
 	 * @return GridPane
 	 */

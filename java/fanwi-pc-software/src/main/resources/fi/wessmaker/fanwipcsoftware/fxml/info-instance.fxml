@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -13,8 +12,4 @@
   <rowConstraints>
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
-   <children>
-      <Label styleClass="textLabel" text="Temp driven" />
-      <Label styleClass="valueLabel" text="True" textAlignment="CENTER" GridPane.columnIndex="1" />
-   </children>
 </GridPane>

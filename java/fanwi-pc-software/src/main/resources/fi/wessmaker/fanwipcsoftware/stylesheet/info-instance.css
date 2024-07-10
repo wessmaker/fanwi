@@ -38,3 +38,14 @@ InfoInstance gridPane sizes:
 .root .hoverable:hover{
   -fx-background-color : buttonhovercolor;
 }
+
+.root .enabled_style{
+  -fx-text-fill : green;
+}
+.root .disabled_style{
+  -fx-text-fill : red;
+}
+.root .waiting_style{
+  -fx-text-fill : textBlue;
+  -fx-opacity : 0.6;
+}
