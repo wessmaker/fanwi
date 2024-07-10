@@ -57,7 +57,7 @@ public class MainWindowController implements Initializable {
                     infoInstances
                             .add(new InfoInstance(instance.getText(), String.valueOf(instance.getValue()), instance));
                 }
-                infoVBox.getChildren().add(infoInstances.getLast().getInstance());
+                infoVBox.getChildren().add(infoInstances.getLast().getNewInstance());
             }
         } catch (Exception e) {
         }

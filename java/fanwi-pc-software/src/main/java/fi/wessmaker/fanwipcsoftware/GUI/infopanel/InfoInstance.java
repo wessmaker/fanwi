@@ -52,7 +52,7 @@ public class InfoInstance {
 	 * 
 	 * @return GridPane
 	 */
-	public GridPane getInstance() throws IOException {
+	public GridPane getNewInstance() throws IOException {
 		GridPane infoInstance;
 		double instanceHeight = 55;
 		infoInstance = FXMLLoader
