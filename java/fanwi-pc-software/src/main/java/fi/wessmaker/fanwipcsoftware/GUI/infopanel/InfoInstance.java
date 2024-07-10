@@ -51,19 +51,14 @@ public class InfoInstance {
 	 */
 	public GridPane getInstance() throws IOException {
 		GridPane infoInstance;
+		double instanceHeight = 55;
 		infoInstance = FXMLLoader
 				.load(Objects.requireNonNull(FanwiApplication.class.getResource("fxml/info-instance.fxml")));
-		int textWidth = (int) infoInstance.getColumnConstraints().getFirst().getPrefWidth();
-		int valueWidth = (int) infoInstance.getColumnConstraints().getLast().getPrefWidth();
-		int height = 55; // This height is hardcoded, it determines the InfoInstance height
-		textLabel.setPrefSize(textWidth, height);
-		valueLabel.setPrefSize(valueWidth, height);
-		textLabel.setWrapText(true);
-		infoInstance.setPrefHeight(height);
-		infoInstance.setMinHeight(height);
-		infoInstance.setMaxHeight(height);
-		infoInstance.add(textLabel, 0, 0);
-		infoInstance.add(valueLabel, 1, 0);
+		infoInstance.setPrefHeight(instanceHeight); 
+		infoInstance.setMinHeight(instanceHeight);
+		infoInstance.setMaxHeight(instanceHeight);
+		infoInstance.add(this.textLabel, 0, 0);
+		infoInstance.add(this.valueLabel, 1, 0);
 		infoInstance.getStylesheets()
 				.add(String.valueOf(FanwiApplication.class.getResource("stylesheet/info-instance.css")));
 		return infoInstance;
