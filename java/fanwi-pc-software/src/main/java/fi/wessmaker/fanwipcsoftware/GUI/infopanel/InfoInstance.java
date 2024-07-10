@@ -35,6 +35,7 @@ public class InfoInstance {
 		valueLabel = new Label(value);
 		valueLabel.getStyleClass().addAll("valueLabel");
 		textLabel.getStyleClass().addAll("textLabel");
+		
 	}
 
 
