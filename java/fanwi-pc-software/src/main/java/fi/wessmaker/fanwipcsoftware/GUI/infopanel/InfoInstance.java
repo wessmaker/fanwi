@@ -43,7 +43,10 @@ public class InfoInstance {
 			instanceValueColoring();
 		});
 	}
-	private void instanceValueColoring(){
+
+
+
+	private void instanceValueColoring() {
 		if (this.type.isBooleanValue()) {
 			switch (valueLabel.getText().toLowerCase()) {
 				case "true":
@@ -60,6 +63,8 @@ public class InfoInstance {
 			}
 		}
 	}
+
+
 
 	public InfoInstance(String labelText, boolean labelValue, InfoInstanceType type) {
 		this(labelText, String.valueOf(labelValue), type);
@@ -96,19 +101,11 @@ public class InfoInstance {
 
 
 
-	public void setText(String text) {
-		this.textLabel.setText(text);
+	public InfoInstanceType getInfoInstanceType() {
+		return this.type;
 	}
 
-
-
-	public void setValue(String value) {
-		this.textLabel.setText(value);
-	}
-
-
-
-	public void setValue(boolean boolValue) {
-		this.textLabel.setText(String.valueOf(boolValue));
+	public void setValue(String value){
+		this.valueLabel.setText(value);
 	}
 }

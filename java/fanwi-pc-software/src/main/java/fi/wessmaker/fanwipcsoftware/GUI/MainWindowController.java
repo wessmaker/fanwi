@@ -1,6 +1,7 @@
 package fi.wessmaker.fanwipcsoftware.GUI;
 
 import fi.wessmaker.fanwipcsoftware.GUI.infopanel.InfoInstance;
+import fi.wessmaker.fanwipcsoftware.GUI.infopanel.InfoInstanceController;
 import fi.wessmaker.fanwipcsoftware.GUI.infopanel.InfoInstanceType;
 import fi.wessmaker.fanwipcsoftware.communication.debug.Debug;
 import javafx.fxml.FXML;
@@ -32,36 +33,20 @@ public class MainWindowController implements Initializable {
     @FXML
     private ToggleButton debugButton;
 
-    private FanGridPaneController fanGridPaneController;
-
-    private ArrayList<InfoInstance> infoInstances = new ArrayList<>();
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Debug.setDebugging(debugButton.isSelected());
-        fanGridPaneController = new FanGridPaneController();
+        InfoInstanceController infoInstanceController = new InfoInstanceController(infoVBox);
+
+
+        infoInstanceController.setConnectionValue(false);
+        
+        
+        FanGridPaneController fanGridPaneController = new FanGridPaneController();
         contentGridPane.add(fanGridPaneController.getFanGridPane(), 1, 1);
         debugButton.setSelected(true);
-        initializeInfoPane();
     }
-
-
-
-    private void initializeInfoPane() { 
-        try {
-            for (InfoInstanceType instance : InfoInstanceType.values()) {
-                if (instance.isBooleanValue()) {
-                    infoInstances.add(new InfoInstance(instance.getText(), (boolean) instance.getDefaultValue(), instance));
-                } else {
-                    infoInstances
-                            .add(new InfoInstance(instance.getText(), String.valueOf(instance.getDefaultValue()), instance));
-                }
-                infoVBox.getChildren().add(infoInstances.getLast().getNewInstance());
-            }
-        } catch (Exception e) {
-        }
-    } //TODO check if created instances count doesn't match with initial count and then throw error 
 
 
 
