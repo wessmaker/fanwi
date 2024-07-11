@@ -9,13 +9,15 @@ package fi.wessmaker.fanwipcsoftware.GUI.infopanel;
  */
 public enum InfoInstanceType {
 	CONNECTION("Connection", false, true),
-	OFFSET("Offset", 0, false),
+	SPINNING("Spinning", false, true),
 	TEMPERATURE_DRIVEN("Temp driven", false, true),
-	TEMPERATURE("Temp", 0, false),
 	SPEED("Speed", 0, false),
-	SPINNING("Spinning", false, true);
+	TEMPERATURE("Temp", 0, false),
+	OFFSET("Offset", 0, false),
+;
 
-	
+
+
 	private final String text;
 
 	private Object defaultValue;
@@ -23,11 +25,13 @@ public enum InfoInstanceType {
 	private boolean booleanValue;
 
 
+
 	InfoInstanceType(String text, Object value, boolean booleanValue) {
 		this.text = text;
 		this.defaultValue = value;
 		this.booleanValue = booleanValue;
 	};
+
 
 
 	public String getText() {
