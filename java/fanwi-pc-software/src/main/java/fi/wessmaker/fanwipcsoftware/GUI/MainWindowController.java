@@ -48,20 +48,20 @@ public class MainWindowController implements Initializable {
 
 
 
-    private void initializeInfoPane() {
+    private void initializeInfoPane() { 
         try {
             for (InfoInstanceType instance : InfoInstanceType.values()) {
                 if (instance.isBooleanValue()) {
-                    infoInstances.add(new InfoInstance(instance.getText(), (boolean) instance.getValue(), instance));
+                    infoInstances.add(new InfoInstance(instance.getText(), (boolean) instance.getDefaultValue(), instance));
                 } else {
                     infoInstances
-                            .add(new InfoInstance(instance.getText(), String.valueOf(instance.getValue()), instance));
+                            .add(new InfoInstance(instance.getText(), String.valueOf(instance.getDefaultValue()), instance));
                 }
                 infoVBox.getChildren().add(infoInstances.getLast().getNewInstance());
             }
         } catch (Exception e) {
         }
-    }
+    } //TODO check if created instances count doesn't match with initial count and then throw error 
 
 
 

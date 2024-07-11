@@ -3,12 +3,15 @@ package fi.wessmaker.fanwipcsoftware.GUI.infopanel;
 import fi.wessmaker.fanwipcsoftware.FanwiApplication;
 import fi.wessmaker.fanwipcsoftware.utility.GuiUtility;
 import fi.wessmaker.fanwipcsoftware.utility.StyleClassType;
+import javafx.event.Event;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
+import java.text.ListFormat.Style;
 import java.util.Objects;
 
 public class InfoInstance {
@@ -35,9 +38,28 @@ public class InfoInstance {
 		valueLabel = new Label(value);
 		textLabel.getStyleClass().addAll("textLabel");
 		valueLabel.getStyleClass().addAll("valueLabel");
+		instanceValueColoring();
+		valueLabel.textProperty().addListener(changeListener -> {
+			instanceValueColoring();
+		});
 	}
-
-
+	private void instanceValueColoring(){
+		if (this.type.isBooleanValue()) {
+			switch (valueLabel.getText().toLowerCase()) {
+				case "true":
+					GuiUtility.setStatusStylingClass(valueLabel, StyleClassType.ENABLED_STYLE);
+					break;
+				case "false":
+					GuiUtility.setStatusStylingClass(valueLabel, StyleClassType.DISABLED_STYLE);
+			}
+		} else {
+			if (Integer.parseInt(valueLabel.getText()) > 0) {
+				GuiUtility.setStatusStylingClass(valueLabel, StyleClassType.ENABLED_STYLE);
+			} else {
+				GuiUtility.setStatusStylingClass(valueLabel, StyleClassType.DISABLED_STYLE);
+			}
+		}
+	}
 
 	public InfoInstance(String labelText, boolean labelValue, InfoInstanceType type) {
 		this(labelText, String.valueOf(labelValue), type);
