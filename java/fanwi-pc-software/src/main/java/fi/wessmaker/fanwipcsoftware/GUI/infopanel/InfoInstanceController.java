@@ -1,7 +1,7 @@
 package fi.wessmaker.fanwipcsoftware.GUI.infopanel;
 
 import java.util.ArrayList;
-import java.util.function.ObjIntConsumer;
+
 
 import javafx.scene.layout.VBox;
 
@@ -12,14 +12,13 @@ public class InfoInstanceController {
 	private ArrayList<InfoInstance> infoInstances = new ArrayList<>();
 
 
-	public InfoInstanceController(VBox vBox) {
-		this.infoInstanceCount = 0;
-		initializeInfoPane(vBox);
+	public InfoInstanceController() {
 	}
 
 
 
-	private void initializeInfoPane(VBox vBox) {
+	public void initializeInfoPane(VBox vBox) {
+		this.infoInstanceCount = 0;
 		try {
 			for (InfoInstanceType instance : InfoInstanceType.values()) {
 				infoInstanceCount++;
@@ -70,7 +69,7 @@ public class InfoInstanceController {
 
 
 
-	public void setOffsetValue(double value){
+	public void setOffsetValue(double value) {
 		getInfoInstanceByType(InfoInstanceType.OFFSET).setValue(String.valueOf(value));
 	}
 
@@ -84,12 +83,13 @@ public class InfoInstanceController {
 	 */
 	public InfoInstance getInfoInstanceByType(InfoInstanceType type) {
 		for (InfoInstance instance : infoInstances) {
-			if (instance.getInfoInstanceType().equals(type)) {
-				return instance;
-			}
+			 if (instance.getInfoInstanceType() == type) {
+				  return instance;
+			 }
 		}
 		return null;
-	}
+  }
+
 
 
 

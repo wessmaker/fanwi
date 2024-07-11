@@ -1,6 +1,9 @@
 package fi.wessmaker.fanwipcsoftware.GUI;
 
 import fi.wessmaker.fanwipcsoftware.FanwiApplication;
+import fi.wessmaker.fanwipcsoftware.GUI.infopanel.InfoInstanceController;
+import fi.wessmaker.fanwipcsoftware.GUI.infopanel.InfoInstanceType;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

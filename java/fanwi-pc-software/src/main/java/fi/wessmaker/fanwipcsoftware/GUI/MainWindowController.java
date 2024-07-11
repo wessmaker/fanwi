@@ -13,7 +13,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class MainWindowController implements Initializable {
@@ -37,12 +36,11 @@ public class MainWindowController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Debug.setDebugging(debugButton.isSelected());
-        InfoInstanceController infoInstanceController = new InfoInstanceController(infoVBox);
+        InfoInstanceController infoInstanceController = new InfoInstanceController();
+        infoInstanceController.initializeInfoPane(infoVBox);
 
+        
 
-        infoInstanceController.setConnectionValue(false);
-        
-        
         FanGridPaneController fanGridPaneController = new FanGridPaneController();
         contentGridPane.add(fanGridPaneController.getFanGridPane(), 1, 1);
         debugButton.setSelected(true);
