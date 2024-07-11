@@ -38,9 +38,6 @@ public class MainWindowController implements Initializable {
         Debug.setDebugging(debugButton.isSelected());
         InfoInstanceController infoInstanceController = new InfoInstanceController();
         infoInstanceController.initializeInfoPane(infoVBox);
-
-        
-
         FanGridPaneController fanGridPaneController = new FanGridPaneController();
         contentGridPane.add(fanGridPaneController.getFanGridPane(), 1, 1);
         debugButton.setSelected(true);

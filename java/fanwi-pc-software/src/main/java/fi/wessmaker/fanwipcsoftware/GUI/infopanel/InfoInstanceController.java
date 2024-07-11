@@ -2,7 +2,6 @@ package fi.wessmaker.fanwipcsoftware.GUI.infopanel;
 
 import java.util.ArrayList;
 
-
 import javafx.scene.layout.VBox;
 
 public class InfoInstanceController {
@@ -83,13 +82,12 @@ public class InfoInstanceController {
 	 */
 	public InfoInstance getInfoInstanceByType(InfoInstanceType type) {
 		for (InfoInstance instance : infoInstances) {
-			 if (instance.getInfoInstanceType() == type) {
-				  return instance;
-			 }
+			if (instance.getInfoInstanceType() == type) {
+				return instance;
+			}
 		}
 		return null;
-  }
-
+	}
 
 
 

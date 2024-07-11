@@ -105,7 +105,9 @@ public class InfoInstance {
 		return this.type;
 	}
 
-	public void setValue(String value){
+
+
+	public void setValue(String value) {
 		this.valueLabel.setText(value);
 	}
 }
