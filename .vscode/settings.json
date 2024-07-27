@@ -3,5 +3,9 @@
     "[java]": {
         "editor.insertSpaces": false,
         "editor.tabSize": 3
+    },
+    "files.associations": {
+        "init.h": "c",
+        "stdint.h": "c"
     }
 }
