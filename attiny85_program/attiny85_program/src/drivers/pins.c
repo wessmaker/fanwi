@@ -1,5 +1,4 @@
 #include "pins.h"
-
 #define DDRB *((volatile unsigned char*) 0x17)
 
 void initializePins(void){

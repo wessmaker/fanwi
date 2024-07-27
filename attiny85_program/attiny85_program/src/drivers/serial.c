@@ -1,6 +1,4 @@
 #include "serial.h"
-
-
 #define BAUDRATE 9600
 #define TX_PIN 4
 #define RX_PIN 3
@@ -12,13 +10,7 @@ void initializeSerial();
 void sendByte(uint8_t byte);
 uint8_t readByte();
 
+void initializeSerial(){}
 
-
-void initializeSerial(){
-
-}
-
-void sendByte(uint8_t byte){
-
-};
+void sendByte(uint8_t byte){};
 
