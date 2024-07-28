@@ -1,5 +1,5 @@
 #include "pins.h"
-#define DDRB *((volatile unsigned char*) 0x17)
+#include "settings/registers.h"
 
 void initializePins(void){
    DDRB |= (0 << 3); //PB3 (pin 2) as input for RX

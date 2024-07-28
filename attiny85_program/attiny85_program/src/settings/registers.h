@@ -1,0 +1,7 @@
+#ifndef REGISTER_H
+#define REGISTER_H
+
+#define DDRB *((volatile unsigned char*) 0x17)
+#define TCCR0A *((volatile unsigned char*) 0x2A)
+#define TCCR0B *((volatile unsigned char*) 0x33)
+#endif

@@ -1,0 +1,12 @@
+#ifndef SETTINGS_H
+#define SETTINGS_H
+
+#define BAUDRATE 9600
+#define CYCLE_SPEED 1000000
+#define BIT_DELAY (CYCLE_SPEED / BAUDRATE)
+#define START_BIT_DELAY BIT_DELAY
+#define END_BIT_DELAY = (BIT_DELAY * 2)
+#define TX_PIN 4
+#define RX_PIN 3
+
+#endif

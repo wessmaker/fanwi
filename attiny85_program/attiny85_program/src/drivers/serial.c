@@ -1,4 +1,5 @@
 #include "serial.h"
+#include "settings/settings.h"
 #define BAUDRATE 9600
 #define TX_PIN 4
 #define RX_PIN 3
