@@ -17,6 +17,8 @@ enum{   //This enum is used in TX and RX
 }serialMessage;
 
 void send_byte(uint8_t byte);
+void receive_fan_speed_value(void);
+void receive_fan_offset_value(void);
 int is_serial_available(void);
 uint8_t get_serial_data(void);
 uint8_t readingSerial;

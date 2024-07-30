@@ -1,13 +1,18 @@
 #include "serial.h"
 #include "settings/settings.h"
 #include "settings/registers.h"
-#include "pins.h"
+#include "settings/pins.h"
 #include "serial_timer.h"
+#include "fan/fan.h"
 
 void initializeSerial(void);
 void send_byte(uint8_t byte);
 void readingSerialData(uint8_t mode);
+void receive_fan_speed_value(void);
+void receive_fan_offset_value(void);
+
 int is_serial_available(void);
+
 uint8_t get_serial_data(void);
 uint8_t readingSerial = 0;
 uint8_t data;
@@ -39,3 +44,21 @@ uint8_t get_serial_data(void){
    return data;   
 }
 
+
+//These "receive" functions may need a handshake with master
+//Asks master if it send this type of data and then send data for compare
+//More weight on master code side because more space for code
+void receive_fan_speed_value(void){
+   uint8_t speedValue = get_serial_data();
+   set_fan_speed_value(speedValue);
+}
+
+void receive_fan_offset_value(void){
+   uint8_t offsetValue = get_serial_data();
+   set_fan_offset_value(offsetValue);
+}
+
+void receive_fan_target_temperature_value(void){
+   uint8_t targetTemperatureValue = get_serial_data();   //0-255 BUT NOT ACTUAL TEMPERATURE
+   set_target_temperature_value(targetTemperatureValue);
+}

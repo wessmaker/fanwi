@@ -1,6 +1,5 @@
-#include "drivers/pins.h"
-#include "serial.c"
-#include "drivers/serial.h"
+#include "settings/pins.h"
+#include "serial/serial.h"
 
 enum serialMessage serialMessage;
 
@@ -32,10 +31,10 @@ void handle_received_command(void){
             set_fan_temperature_driven_mode(0);
             break;
          case RECEIVE_SPEED_VALUE:
-            receive_speed_value();
+            receive_fan_speed_value();
             break;
          case RECEIVE_OFFSET_VALUE:
-            receive_offset_value();
+            receive_fan_offset_value();
             break;
          case RECEIVE_START:
             handelingData = 0;

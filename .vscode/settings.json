@@ -7,6 +7,8 @@
     "files.associations": {
         "init.h": "c",
         "stdint.h": "c",
-        "registers.h": "c"
+        "registers.h": "c",
+        "serial_timer.h": "c",
+        "settings.h": "c"
     }
 }
