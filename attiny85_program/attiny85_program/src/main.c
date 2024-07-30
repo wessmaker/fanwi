@@ -59,8 +59,6 @@ int main(){
    timer_initialize();
    while (1){
       handle_receive_start();
-
-
    }
    return 0;
 }
