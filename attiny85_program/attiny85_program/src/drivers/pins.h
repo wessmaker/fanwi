@@ -1,6 +1,6 @@
 #ifndef PINS_H
 #define PINS_H
 
-void initMcu(void);
+void initializePins(void);
 
 #endif

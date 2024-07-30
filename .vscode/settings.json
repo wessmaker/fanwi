@@ -6,6 +6,7 @@
     },
     "files.associations": {
         "init.h": "c",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "registers.h": "c"
     }
 }
