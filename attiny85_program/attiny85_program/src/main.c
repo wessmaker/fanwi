@@ -1,9 +1,25 @@
 #include "settings/pins.h"
 #include "serial/serial.h"
+#include "fan/fan.h"
 
 enum serialMessage serialMessage;
-
 uint8_t handelingData = 0;
+uint8_t get_serial_data(void);
+
+void handle_received_command(void);
+void set_fan_spinning_mode(int);
+void set_fan_spinning_mode(int);
+void set_fan_temperature_driven_mode(int);
+void set_fan_temperature_driven_mode(int);
+void receive_fan_speed_value(void);
+void receive_fan_offset_value(void);
+void handle_fan_spinning_modes(void);
+void initializePins(void);
+void timer_initialize(void);
+void handle_receive_start(void);
+void handle_fan_spinning_modes(void);
+
+
 
 void handle_receive_start(void){
    if (get_serial_data() == RECEIVE_START && !handelingData){
@@ -13,6 +29,7 @@ void handle_receive_start(void){
       handelingData = 0;
    }
 }
+
 
 
 void handle_received_command(void){
@@ -58,6 +75,7 @@ int main(){
    timer_initialize();
    while (1){
       handle_receive_start();
+      handle_fan_spinning_modes();
    }
    return 0;
 }

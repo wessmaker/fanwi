@@ -9,6 +9,8 @@
         "stdint.h": "c",
         "registers.h": "c",
         "serial_timer.h": "c",
-        "settings.h": "c"
+        "settings.h": "c",
+        "pins.h": "c",
+        "pwm.h": "c"
     }
 }
