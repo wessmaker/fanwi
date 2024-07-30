@@ -2,7 +2,7 @@
 #define TIMER_H
 #include <stdint.h>
 
-void initializeTimer();
+void timer_initialize(void);
 void delay_us(uint16_t microSeconds);
 void delay_bits(uint8_t bitCount);
 #endif
