@@ -17,10 +17,10 @@ void receive_fan_offset_value(void);
 void handle_fan_spinning_modes(void);
 void pins_initialize(void);
 void timer_initialize(void);
-void handle_receive_start(void);
+void handle_receiving(void);
 void handle_fan_spinning_modes(void);
 
-void handle_receive_start(void){
+void handle_receiving(void){
    if (get_serial_data() == RECEIVE_START && !handelingData){
       handelingData = 1;
       handle_received_command();
@@ -71,7 +71,7 @@ int main(){
    timer_initialize();
    pwm_initialize();
    while (1){
-      handle_receive_start();
+      handle_receiving();
       handle_fan_spinning_modes();
    }
    return 0;

@@ -17,4 +17,3 @@ void pwm_initialize(void){
 void set_fan_pwm(uint8_t dutyCycle) {
    OCR0A = dutyCycle;
 }
-

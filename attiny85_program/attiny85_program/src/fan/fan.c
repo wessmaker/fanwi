@@ -13,7 +13,6 @@ int fanTemperatureDriven = 0;
 uint8_t fanSpeed = 0;
 uint8_t fanOffset = 0;
 uint8_t fanTargetTemperature = 0;
-
 uint8_t sensorTemperature = 0;
 
 void set_fan_spinning_mode(int mode){
@@ -37,11 +36,9 @@ void handle_fan_spinning_modes(){
    switch (fanTemperatureDriven){
    case 0:
       set_fan_pwm(fanSpeed);
-
       break;
    case 1:
       //TODO implement PID-like control here
-
       break;
    }
 }
