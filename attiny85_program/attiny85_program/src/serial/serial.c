@@ -12,11 +12,9 @@ void receive_fan_speed_value(void);
 void receive_fan_offset_value(void);
 int is_serial_available(void);
 
-
 uint8_t get_serial_data(void);
 uint8_t readingSerial = 0;
 uint8_t data;
-
 
 int is_serial_available(void){     //Check if PB3 is high (RX pin) and return 1 / 0
    if ((PINB & 0x08) == 0 && readingSerial == 0){  
@@ -26,7 +24,6 @@ int is_serial_available(void){     //Check if PB3 is high (RX pin) and return 1 
    }
    return 0;
 }
-
 
 uint8_t get_serial_data(void){
    data = NULL_DATA;
@@ -44,7 +41,6 @@ uint8_t get_serial_data(void){
    readingSerial = 0;   
    return data;   
 }
-
 
 //These "receive" functions may need a handshake with master
 //Asks master if it send this type of data and then send data for compare

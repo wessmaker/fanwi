@@ -6,5 +6,4 @@ uint8_t get_sensor_value(void);
 
 
 
-
 #endif
