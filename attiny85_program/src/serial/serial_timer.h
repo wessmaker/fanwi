@@ -3,6 +3,6 @@
 #include <stdint.h>
 
 void timer_initialize(void);
-void delay_us(uint16_t microSeconds);
-void delay_bits(uint8_t bitCount);
+void delay_us(uint16_t);
+void delay_bits(uint8_t);
 #endif

@@ -16,7 +16,7 @@ enum{   //This enum is used in TX and RX
    RECEIVE_TARGET_TEMPERATURE_VALUE = 0xC3
 }serialMessage;
 
-void send_byte(uint8_t byte);
+void send_byte(uint8_t);
 void receive_fan_speed_value(void);
 void receive_fan_offset_value(void);
 int is_serial_available(void);

@@ -2,9 +2,11 @@
 #define REGISTER_H
 
 #define DDRB *((volatile unsigned char*) 0x17)
+#define TCCR1 *((volatile unsigned char*) 0x30)
+#define TCNT1 *((volatile unsigned char*) 0x2F)
 #define TCCR0A *((volatile unsigned char*) 0x2A)
-#define TCCR0B *((volatile unsigned char*) 0x33)
 #define TCNT0 *((volatile unsigned char*)0x32)
-#define TIFR *((volatile unsigned char*)0x38)
+#define OCR0A *((volatile unsigned char*)0x29)
 #define PINB *((volatile unsigned char*)0x16)
+
 #endif
