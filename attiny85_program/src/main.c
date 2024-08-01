@@ -44,10 +44,10 @@ void handle_received_command(void){
          case TEMPERATURE_DRIVEN_STOP:
             set_fan_temperature_driven_mode(0);
             break;
-         case RECEIVE_SPEED_VALUE:
+         case SPEED_VALUE:
             receive_fan_speed_value();
             break;
-         case RECEIVE_OFFSET_VALUE:
+         case OFFSET_VALUE:
             receive_fan_offset_value();
             break;
          case RECEIVE_START:

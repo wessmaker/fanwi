@@ -3,4 +3,6 @@
 
 void pins_initialize(void);
 
+#define PINB3 3
+
 #endif
