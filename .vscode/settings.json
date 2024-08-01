@@ -11,6 +11,7 @@
         "serial_timer.h": "c",
         "settings.h": "c",
         "pins.h": "c",
-        "pwm.h": "c"
+        "pwm.h": "c",
+        "fan.h": "c"
     }
 }

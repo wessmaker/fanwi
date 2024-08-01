@@ -5,8 +5,7 @@
 #include "serial_timer.h"
 #include "fan/fan.h"
 
-void initializeSerial(void);
-void send_byte(uint8_t);
+void transmit_message(enum SerialMessage SerialMessage, uint8_t value);
 void readingSerialData(uint8_t);
 void receive_fan_speed_value(void);
 void receive_fan_offset_value(void);
@@ -15,6 +14,18 @@ int is_serial_available(void);
 uint8_t get_serial_data(void);
 uint8_t readingSerial = 0;
 uint8_t data;
+
+void write_serial_data(uint8_t value){
+
+}
+
+
+void transmit_message(enum SerialMessage SerialMessage, uint8_t value){
+
+}
+
+
+
 
 int is_serial_available(void){     //Check if PB3 is high (RX pin) and return 1 / 0
    if ((PINB & 0x08) == 0 && readingSerial == 0){  

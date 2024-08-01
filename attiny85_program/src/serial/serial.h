@@ -3,7 +3,7 @@
 #ifndef SERIAL_H
 #define SERIAL_H
 
-enum{   //This enum is used in TX and RX
+enum SerialMessage {   //This enum is used in TX and RX
    NULL_DATA = 0xFF,
    RECEIVE_START = 0xA1,
    RECEIVE_STOP = 0xA2,
@@ -14,9 +14,11 @@ enum{   //This enum is used in TX and RX
    RECEIVE_SPEED_VALUE = 0xC1,
    RECEIVE_OFFSET_VALUE = 0xC2,
    RECEIVE_TARGET_TEMPERATURE_VALUE = 0xC3
-}serialMessage;
+};
 
-void send_byte(uint8_t);
+
+void transmit_message(enum SerialMessage, uint8_t); //If no value has to be transmitted, set value to 0
+void write_serial_data(uint8_t);
 void receive_fan_speed_value(void);
 void receive_fan_offset_value(void);
 int is_serial_available(void);
