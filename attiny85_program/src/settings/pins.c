@@ -2,9 +2,9 @@
 #include "registers.h"
 
 void pins_initialize(void){
-   DDRB |= (0 << 3); //PB3 (pin 2) as input for RX
-   DDRB |= (1 << 4); //PB3 (pin 2) as output for TX
+   DDRB |= (1 << 3); //PB4 (pin 2) as output for TX
+   PORTB |= (1 << 3); //Set TX pin high as initial state
+   DDRB |= (0 << 4); //PB3 (pin 3) as input for RX
    DDRB |= (1 << 0); //PB0 (pin 5) as output for PWM (OC0A)
-   PORTB |= (1 << PINB3);
-// DDRB |= (0 << ?); //PB? (pin ?) as input for sensor voltage value 
+   
 };

@@ -31,6 +31,7 @@ void write_serial_data(uint8_t data){
    delay_bits(1);
    PORTB |= (1 << PINB3);
    delay_bits(2); //Two end bits
+   //PINB3 has to stay HIGH so not set to LOW
 }
 
 
