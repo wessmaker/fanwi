@@ -4,9 +4,9 @@
 #include "settings/pins.h"
 #include "serial_timer.h"
 #include "fan/fan.h"
+#include "settings/pins.h"
 
-void initializeSerial(void);
-void send_byte(uint8_t);
+void transmit_message(enum SerialMessage SerialMessage, uint8_t value);
 void readingSerialData(uint8_t);
 void receive_fan_speed_value(void);
 void receive_fan_offset_value(void);
@@ -16,8 +16,67 @@ uint8_t get_serial_data(void);
 uint8_t readingSerial = 0;
 uint8_t data;
 
+void write_serial_data(uint8_t data){
+   PORTB &= ~(1 << PINB3);
+   delay_bits(1);
+   for (uint8_t i = 0; i < 8; i++){
+      if (data & 0x01){
+         PORTB |= (1 << PINB3);
+      }else{
+         PORTB &= ~(1 << PINB3);
+      }
+      delay_bits(1);
+   }
+   PORTB &= ~(1 << PINB3);  //No parity bit
+   delay_bits(1);
+   PORTB |= (1 << PINB3);
+   delay_bits(2); //Two end bits
+}
+
+
+void transmit_message(enum SerialMessage serialMessage, uint8_t value){
+   switch (serialMessage){
+   case NULL_DATA:
+      break;
+   case RECEIVE_START:
+      write_serial_data(RECEIVE_START);
+      break;
+   case RECEIVE_STOP:
+      write_serial_data(RECEIVE_STOP);
+      break;
+   case SPINNING_START:
+      write_serial_data(SPINNING_START);
+      break;
+   case SPINNING_STOP:
+      write_serial_data(SPINNING_STOP);
+      break;
+   case TEMPERATURE_DRIVEN_START:
+      write_serial_data(TEMPERATURE_DRIVEN_START);
+      break;
+   case TEMPERATURE_DRIVEN_STOP:
+      write_serial_data(TEMPERATURE_DRIVEN_STOP);
+      break;
+   case SPEED_VALUE:
+      write_serial_data(SPEED_VALUE);
+      write_serial_data(value);
+      break;
+   case OFFSET_VALUE:
+      write_serial_data(OFFSET_VALUE);
+      write_serial_data(value);
+      break;
+   case TARGET_TEMPERATURE_VALUE:
+      write_serial_data(TARGET_TEMPERATURE_VALUE);
+      write_serial_data(value);
+      break;
+   case TEMPERATURE_VALUE:
+      write_serial_data(TEMPERATURE_VALUE);
+      write_serial_data(value);
+      break;
+   }
+}
+
 int is_serial_available(void){     //Check if PB3 is high (RX pin) and return 1 / 0
-   if ((PINB & 0x08) == 0 && readingSerial == 0){  
+   if ((PINB & (1 << PINB3)) == 0 && readingSerial == 0){  
       data = 0x00;
       delay_bits(1);  
       return 1;
@@ -32,7 +91,7 @@ uint8_t get_serial_data(void){
       data = 0x00;
       for(int i = 0; i < 8; i++){
          data >>= 1;
-         if (PINB & 0x08) {
+         if (PINB & (1 << PINB3)) {
             data |= (1 << 7);
          }
          delay_bits(1);

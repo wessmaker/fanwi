@@ -2,9 +2,8 @@
 #define PWM_H
 
 #include <stdint.h>
-#include "settings/pins.h"
-#include "settings/registers.h"
-#include "settings/settings.h"
+#include "registers.h"
+#include "settings.h"
 
 void set_fan_pwm(uint8_t);
 void pwm_initialize(void);
