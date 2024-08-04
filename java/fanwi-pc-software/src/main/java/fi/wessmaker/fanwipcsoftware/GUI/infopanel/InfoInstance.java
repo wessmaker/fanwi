@@ -1,12 +1,17 @@
 package fi.wessmaker.fanwipcsoftware.GUI.infopanel;
 
 import fi.wessmaker.fanwipcsoftware.FanwiApplication;
+import fi.wessmaker.fanwipcsoftware.utility.GuiUtility;
+import fi.wessmaker.fanwipcsoftware.utility.StyleClassType;
+import javafx.event.Event;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
+import java.text.ListFormat.Style;
 import java.util.Objects;
 
 public class InfoInstance {
@@ -31,6 +36,32 @@ public class InfoInstance {
 		this.type = type;
 		textLabel = new Label(text);
 		valueLabel = new Label(value);
+		textLabel.getStyleClass().addAll("textLabel");
+		valueLabel.getStyleClass().addAll("valueLabel");
+		instanceValueColoring();
+		valueLabel.textProperty().addListener(changeListener -> {
+			instanceValueColoring();
+		});
+	}
+
+
+
+	private void instanceValueColoring() {
+		if (this.type.isBooleanValue()) {
+			switch (valueLabel.getText().toLowerCase()) {
+				case "true":
+					GuiUtility.setStatusStylingClass(valueLabel, StyleClassType.ENABLED_STYLE);
+					break;
+				case "false":
+					GuiUtility.setStatusStylingClass(valueLabel, StyleClassType.DISABLED_STYLE);
+			}
+		} else {
+			if (Integer.parseInt(valueLabel.getText()) > 0) {
+				GuiUtility.setStatusStylingClass(valueLabel, StyleClassType.ENABLED_STYLE);
+			} else {
+				GuiUtility.setStatusStylingClass(valueLabel, StyleClassType.DISABLED_STYLE);
+			}
+		}
 	}
 
 
@@ -43,25 +74,20 @@ public class InfoInstance {
 
 
 	/**
-	 * Get instance as FXML GridPane with predefined attributes and styling
+	 * Get new instance as FXML GridPane with predefined attributes and styling
 	 * 
 	 * @return GridPane
 	 */
-	public GridPane getInstance() throws IOException {
+	public GridPane getNewInstance() throws IOException {
 		GridPane infoInstance;
+		double instanceHeight = 55;
 		infoInstance = FXMLLoader
 				.load(Objects.requireNonNull(FanwiApplication.class.getResource("fxml/info-instance.fxml")));
-		int textWidth = (int) infoInstance.getColumnConstraints().getFirst().getPrefWidth();
-		int valueWidth = (int) infoInstance.getColumnConstraints().getLast().getPrefWidth();
-		int height = 55; // This height is hardcoded, it determines the InfoInstance height
-		textLabel.setPrefSize(textWidth, height);
-		valueLabel.setPrefSize(valueWidth, height);
-		textLabel.setWrapText(true);
-		infoInstance.setPrefHeight(height);
-		infoInstance.setMinHeight(height);
-		infoInstance.setMaxHeight(height);
-		infoInstance.add(textLabel, 0, 0);
-		infoInstance.add(valueLabel, 1, 0);
+		infoInstance.setPrefHeight(instanceHeight);
+		infoInstance.setMinHeight(instanceHeight);
+		infoInstance.setMaxHeight(instanceHeight);
+		infoInstance.add(this.textLabel, 0, 0);
+		infoInstance.add(this.valueLabel, 1, 0);
 		infoInstance.getStylesheets()
 				.add(String.valueOf(FanwiApplication.class.getResource("stylesheet/info-instance.css")));
 		return infoInstance;
@@ -70,24 +96,18 @@ public class InfoInstance {
 
 
 	public boolean isBooleanValue() {
-		return booleanValue;
+		return this.booleanValue;
 	}
 
 
 
-	public void setText(String text) {
-		this.textLabel.setText(text);
+	public InfoInstanceType getInfoInstanceType() {
+		return this.type;
 	}
 
 
 
 	public void setValue(String value) {
-		this.textLabel.setText(value);
-	}
-
-
-
-	public void setValue(boolean boolValue) {
-		this.textLabel.setText(String.valueOf(boolValue));
+		this.valueLabel.setText(value);
 	}
 }
