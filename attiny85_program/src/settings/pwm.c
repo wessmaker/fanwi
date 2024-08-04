@@ -1,6 +1,3 @@
-#include "settings/pins.h"
-#include "settings/registers.h"
-#include "settings/settings.h"
 #include "pwm.h"
 #include <stdint.h>
 

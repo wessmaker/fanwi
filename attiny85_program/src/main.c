@@ -3,7 +3,6 @@
 #include "fan/fan.h"
 #include "fan/pwm.h"
 
-enum serialMessage serialMessage;
 uint8_t handelingData = 0;
 uint8_t get_serial_data(void);
 

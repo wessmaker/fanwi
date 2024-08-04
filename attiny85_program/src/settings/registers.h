@@ -9,6 +9,5 @@
 #define OCR0A *((volatile unsigned char*)0x29)
 #define PINB *((volatile unsigned char*)0x16)
 #define PORTB *((volatile unsigned char*)0x18)
-#define PINB3 3
 
 #endif

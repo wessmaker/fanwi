@@ -1,4 +1,4 @@
-#include "pwm.h"
+#include "settings/pwm.h"
 #include <stdint.h>
 
 void set_fan_spinning_mode(int);

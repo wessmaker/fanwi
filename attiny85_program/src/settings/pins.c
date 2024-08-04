@@ -1,5 +1,5 @@
 #include "pins.h"
-#include "settings/registers.h"
+#include "registers.h"
 
 void pins_initialize(void){
    DDRB |= (0 << 3); //PB3 (pin 2) as input for RX
