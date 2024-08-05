@@ -4,9 +4,8 @@
 
 void initialize_I2C(void);
 void I2C_delay(uint8_t);
-void I2C_write(uint8_t, uint8_t);
-
-void I2C_start_write(void);
+void I2C_write_byte(uint8_t);
+void I2C_start_write(uint8_t);
 void I2C_stop_write(void);
 uint8_t I2C_read_ACK(void);
 
@@ -22,16 +21,20 @@ void I2C_delay(uint8_t delayCount){
    }
 }
 
-void I2C_start_write(){
+void I2C_start_write(uint8_t address){
    PORTB |= (1 << SCL_PIN);
    PORTB &= ~(1 << SDA_PIN);
+   I2C_delay(1);
+   address <<= 1; //Let last bit to be 0 because write mode
+   I2C_write_byte(address);
 }
 
-void I2C_stop_write(){
+void I2C_stop_write(void){
    PORTB &= ~(1 << SDA_PIN);
    PORTB |= (1 << SCL_PIN);
    I2C_delay(1);
    PORTB |= (1 << SDA_PIN);
+
 }
 
 void I2C_write_byte(uint8_t byte){
@@ -49,7 +52,7 @@ void I2C_write_byte(uint8_t byte){
    }
 }
 
-uint8_t I2C_read_ACK(){
+uint8_t I2C_read_ACK(void){
    PORTB |= (1 << SCL_PIN);
    uint8_t ack = !(PINB & (1 << SDA_PIN));   //LOW = SUCCESS, HIGH = FAILURE
    I2C_delay(1);
@@ -57,18 +60,10 @@ uint8_t I2C_read_ACK(){
    return ack;
 }
 
-void I2C_write(uint8_t data, uint8_t address){
-   I2C_start_write();
-   I2C_delay(1);
-   address <<= 1;
-   address |= 1;  //Add write bit
-   I2C_write_byte(address);
-   I2C_delay(1);
-   if (I2C_read_ACK()){
-      I2C_write_byte(data);
-   }else{
-      //TODO do ACK checking
-   }
-   I2C_delay(1);
+uint8_t I2C_write(uint8_t address, uint8_t data){
+   I2C_start_write(address);
+   I2C_write_byte(data);
    I2C_stop_write();
 }
+
+

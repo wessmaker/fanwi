@@ -4,7 +4,12 @@
 
 void initialize_I2C(void);
 void I2C_delay(uint8_t);
+void I2C_write_byte(uint8_t);
+
+void I2C_start_write(uint8_t);
+void I2C_stop_write(void);
 void I2C_write(uint8_t, uint8_t);
+uint8_t I2C_read_ACK(void);
 //uint8_t I2C_read(void);
 
 #endif

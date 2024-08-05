@@ -12,6 +12,7 @@
         "settings.h": "c",
         "pin.h": "c",
         "pwm.h": "c",
-        "fan.h": "c"
+        "fan.h": "c",
+        "oled_driver.h": "c"
     }
 }
