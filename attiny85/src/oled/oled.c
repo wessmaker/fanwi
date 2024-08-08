@@ -4,6 +4,6 @@ void intialize_oled(void);
 
 
 void intialize_oled(void){
-   show_speed_label();
-   show_temperature_label();
+   show_oled_label(SPEED);
+   show_oled_label(TEMPERATURE);
 }

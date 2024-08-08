@@ -1,0 +1,22 @@
+{
+   "version": "2.0.0",
+   "tasks": [
+     {
+       "label": "ATTINY85_UPLOAD",
+       "type": "shell",
+       "command": "pio",
+       "args": [
+         "run",
+         "--target",
+         "upload"
+       ],
+       "group": {
+         "kind": "build",
+         "isDefault": true
+       },
+       "problemMatcher": ["$gcc"],
+       "cwd": "${workspaceFolder}/attiny85" //This doesn't get excecuted
+     }
+   ]
+ }
+ 
