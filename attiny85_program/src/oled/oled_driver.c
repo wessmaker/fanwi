@@ -16,6 +16,7 @@ void set_oled_speed_value(uint8_t value);
 uint8_t labelOffset = 10;
 uint8_t charSpacing = 1;
 const uint8_t speedPageNumber = 0x01;
+const uint8_t temperaturePageNumber = 0x02;
 
 void send_command(uint8_t command){
    I2C_start_write(OLED_ADDRESS);
@@ -26,7 +27,6 @@ void send_command(uint8_t command){
 void show_oled_speed_label(void){
    send_command(ADRESSING_MODE_SELECTION);
    send_command(ADRESSING_HORIZONTAL_MODE);
-
    for (int i = 0; i < 5; i++){
       send_command(PAGE_ADDRESS_RANGE);
       send_command(speedPageNumber);   //Start page
@@ -34,14 +34,26 @@ void show_oled_speed_label(void){
       send_command(COLUMN_RANGE_SELECTION);
       send_command(8 * i + labelOffset);     //Start column
       send_command(8 * i + 8 + labelOffset); //End column
-      for (int j = 0; i < 7; i++){
+      for (int j = 0; j < 7; j++){
          send_command(SPEED_WORD[i][j]);
       }
    }
 }
 
 void show_oled_temperature_label(void){
-
+ send_command(ADRESSING_MODE_SELECTION);
+   send_command(ADRESSING_HORIZONTAL_MODE);
+   for (int i = 0; i < 11; i++){
+      send_command(PAGE_ADDRESS_RANGE);
+      send_command(temperaturePageNumber);   //Start page
+      send_command(temperaturePageNumber);   //End page
+      send_command(COLUMN_RANGE_SELECTION);
+      send_command(8 * i + labelOffset);     //Start column
+      send_command(8 * i + 8 + labelOffset); //End column
+      for (int j = 0; j < 7; j++){
+         send_command(TEMPERATURE_WORD[i][j]);
+      }
+   }
 }
 
 void set_oled_speed_value(uint8_t value){
